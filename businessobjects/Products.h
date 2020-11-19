@@ -18,6 +18,7 @@ public:
     Products(int ProductId, string ProductName, int SupplierId, int CategoryId, string Unit, double Price);
     // int GetProductsByProductID(int);
     static void AddListProducts(Products *item);
+    ostream& operator << (ostream& out, Products item);
     
 };
 

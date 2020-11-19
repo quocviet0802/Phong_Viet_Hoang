@@ -16,10 +16,12 @@ Products::Products(int ProductId, string ProductName, int SupplierId, int Catego
     this->Price = Price;
 }
 
+
 /*
-Cte
-function AddListProducts  is describing for adding
-a new product into a vector of type is Products
+@file Products.cpp
+@ function AddListProducts  is describing for adding
+  a new product into a vector of type is Products
+@author VietMQ
 */
 void Products::AddListProducts(Products *item){
     ListProducts.push_back(item);
