@@ -181,7 +181,7 @@ void OrderDetailsData::printAll()
     }
 }
 
-// vector<OrderDetails> OrderDetailsData::getOrderDetailsList()
-// {
-//     return OrderDetailsList;
-// }
+vector<OrderDetails> OrderDetailsData::getOrderDetailsList()
+{
+    return OrderDetailsList;
+}

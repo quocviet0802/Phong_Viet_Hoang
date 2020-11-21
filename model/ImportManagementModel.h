@@ -9,16 +9,11 @@
 
 
 class ImportManagementModel: public WarehouseManagementModel{
-private:
-    vector<Shippers> OrderData;
-    vector<Suppliers> _DataImport;
+// private:
 
 public:
     ImportManagementModel();
-    ImportManagementModel(ShippersData, SuppliersData);
-    int PushBack(Suppliers);
     void ExportReport();
-    // void GetDataImportInOrder(vector);
 };
 
 

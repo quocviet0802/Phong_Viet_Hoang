@@ -30,5 +30,6 @@ public:
     bool updateOrderDetail(int OrderDetailID,int OrderID,int ProductID,int Quantity);
     bool deleteOrderDetail(int OrderDetailID);
 
+    vector<OrderDetails> getOrderDetailsList();
     void printAll();
 };
