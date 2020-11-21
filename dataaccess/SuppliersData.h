@@ -24,5 +24,7 @@ public:
 
     int GetSize();
     int ExportToFile(string);
+    
+    friend class ImportManagementModel;
 };
 #endif

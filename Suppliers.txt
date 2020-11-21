@@ -1,2 +1,0 @@
-{"Address":"49 Gilbert St.","City":"Londona","ContactName":"Charlotte Cooper","Country":"UK","Phone":"(171) 555-2222","PostalCode":"EC1 4SD","SupplierID":1,"SupplierName":"Exotic Liquid"}
-{"Address":"P.O. Box 78934","City":"New Orleans","ContactName":"Shelley Burke","Country":"USA","Phone":"(100) 555-4822","PostalCode":"70117","SupplierID":2,"SupplierName":"New Orleans Cajun Delights"}

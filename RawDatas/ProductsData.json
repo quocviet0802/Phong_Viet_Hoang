@@ -1,0 +1,77 @@
+{"CategoryID":1,"Price":18.0,"ProductID":1,"ProductName":"Chais","SupplierID":1,"Unit":"10 boxes x 20 bags"}
+{"CategoryID":1,"Price":19.0,"ProductID":2,"ProductName":"Chang","SupplierID":1,"Unit":"24 - 12 oz bottles"}
+{"CategoryID":2,"Price":10.0,"ProductID":3,"ProductName":"Aniseed Syrup","SupplierID":1,"Unit":"12 - 550 ml bottles"}
+{"CategoryID":2,"Price":22.0,"ProductID":4,"ProductName":"Chef Anton's Cajun Seasoning","SupplierID":2,"Unit":"48 - 6 oz jars"}
+{"CategoryID":2,"Price":21.35,"ProductID":5,"ProductName":"Chef Anton's Gumbo Mix","SupplierID":2,"Unit":"36 boxes"}
+{"CategoryID":2,"Price":25.0,"ProductID":6,"ProductName":"Grandma's Boysenberry Spread","SupplierID":3,"Unit":"12 - 8 oz jars"}
+{"CategoryID":7,"Price":30.0,"ProductID":7,"ProductName":"Uncle Bob's Organic Dried Pears","SupplierID":3,"Unit":"12 - 1 lb pkgs."}
+{"CategoryID":2,"Price":40.0,"ProductID":8,"ProductName":"Northwoods Cranberry Sauce","SupplierID":3,"Unit":"12 - 12 oz jars"}
+{"CategoryID":6,"Price":97.0,"ProductID":9,"ProductName":"Mishi Kobe Niku","SupplierID":4,"Unit":"18 - 500 g pkgs."}
+{"CategoryID":8,"Price":31.0,"ProductID":10,"ProductName":"Ikura","SupplierID":4,"Unit":"12 - 200 ml jars"}
+{"CategoryID":4,"Price":21.0,"ProductID":11,"ProductName":"Queso Cabrales","SupplierID":5,"Unit":"1 kg pkg."}
+{"CategoryID":4,"Price":38.0,"ProductID":12,"ProductName":"Queso Manchego La Pastora","SupplierID":5,"Unit":"10 - 500 g pkgs."}
+{"CategoryID":8,"Price":6.0,"ProductID":13,"ProductName":"Konbu","SupplierID":6,"Unit":"2 kg box"}
+{"CategoryID":7,"Price":23.25,"ProductID":14,"ProductName":"Tofu","SupplierID":6,"Unit":"40 - 100 g pkgs."}
+{"CategoryID":2,"Price":15.5,"ProductID":15,"ProductName":"Genen Shouyu","SupplierID":6,"Unit":"24 - 250 ml bottles"}
+{"CategoryID":3,"Price":17.45,"ProductID":16,"ProductName":"Pavlova","SupplierID":7,"Unit":"32 - 500 g boxes"}
+{"CategoryID":6,"Price":39.0,"ProductID":17,"ProductName":"Alice Mutton","SupplierID":7,"Unit":"20 - 1 kg tins"}
+{"CategoryID":8,"Price":62.5,"ProductID":18,"ProductName":"Carnarvon Tigers","SupplierID":7,"Unit":"16 kg pkg."}
+{"CategoryID":3,"Price":9.2,"ProductID":19,"ProductName":"Teatime Chocolate Biscuits","SupplierID":8,"Unit":"10 boxes x 12 pieces"}
+{"CategoryID":3,"Price":81.0,"ProductID":20,"ProductName":"Sir Rodney's Marmalade","SupplierID":8,"Unit":"30 gift boxes"}
+{"CategoryID":3,"Price":10.0,"ProductID":21,"ProductName":"Sir Rodney's Scones","SupplierID":8,"Unit":"24 pkgs. x 4 pieces"}
+{"CategoryID":5,"Price":21.0,"ProductID":22,"ProductName":"Gustaf's Kn�ckebr�d","SupplierID":9,"Unit":"24 - 500 g pkgs."}
+{"CategoryID":5,"Price":9.0,"ProductID":23,"ProductName":"Tunnbr�d","SupplierID":9,"Unit":"12 - 250 g pkgs."}
+{"CategoryID":1,"Price":4.5,"ProductID":24,"ProductName":"Guaran� Fant�stica","SupplierID":10,"Unit":"12 - 355 ml cans"}
+{"CategoryID":3,"Price":14.0,"ProductID":25,"ProductName":"NuNuCa Nu�-Nougat-Creme","SupplierID":11,"Unit":"20 - 450 g glasses"}
+{"CategoryID":3,"Price":31.23,"ProductID":26,"ProductName":"Gumb�r Gummib�rchen","SupplierID":11,"Unit":"100 - 250 g bags"}
+{"CategoryID":3,"Price":43.9,"ProductID":27,"ProductName":"Schoggi Schokolade","SupplierID":11,"Unit":"100 - 100 g pieces"}
+{"CategoryID":7,"Price":45.6,"ProductID":28,"ProductName":"R�ssle Sauerkraut","SupplierID":12,"Unit":"25 - 825 g cans"}
+{"CategoryID":6,"Price":123.79,"ProductID":29,"ProductName":"Th�ringer Rostbratwurst","SupplierID":12,"Unit":"50 bags x 30 sausgs."}
+{"CategoryID":8,"Price":25.89,"ProductID":30,"ProductName":"Nord-Ost Matjeshering","SupplierID":13,"Unit":"10 - 200 g glasses"}
+{"CategoryID":4,"Price":12.5,"ProductID":31,"ProductName":"Gorgonzola Telino","SupplierID":14,"Unit":"12 - 100 g pkgs"}
+{"CategoryID":4,"Price":32.0,"ProductID":32,"ProductName":"Mascarpone Fabioli","SupplierID":14,"Unit":"24 - 200 g pkgs."}
+{"CategoryID":4,"Price":2.5,"ProductID":33,"ProductName":"Geitost","SupplierID":15,"Unit":"500 g"}
+{"CategoryID":1,"Price":14.0,"ProductID":34,"ProductName":"Sasquatch Ale","SupplierID":16,"Unit":"24 - 12 oz bottles"}
+{"CategoryID":1,"Price":18.0,"ProductID":35,"ProductName":"Steeleye Stout","SupplierID":16,"Unit":"24 - 12 oz bottles"}
+{"CategoryID":8,"Price":19.0,"ProductID":36,"ProductName":"Inlagd Sill","SupplierID":17,"Unit":"24 - 250 g jars"}
+{"CategoryID":8,"Price":26.0,"ProductID":37,"ProductName":"Gravad lax","SupplierID":17,"Unit":"12 - 500 g pkgs."}
+{"CategoryID":1,"Price":263.5,"ProductID":38,"ProductName":"C�te de Blaye","SupplierID":18,"Unit":"12 - 75 cl bottles"}
+{"CategoryID":1,"Price":18.0,"ProductID":39,"ProductName":"Chartreuse verte","SupplierID":18,"Unit":"750 cc per bottle"}
+{"CategoryID":8,"Price":18.4,"ProductID":40,"ProductName":"Boston Crab Meat","SupplierID":19,"Unit":"24 - 4 oz tins"}
+{"CategoryID":8,"Price":9.65,"ProductID":41,"ProductName":"Jack's New England Clam Chowder","SupplierID":19,"Unit":"12 - 12 oz cans"}
+{"CategoryID":5,"Price":14.0,"ProductID":42,"ProductName":"Singaporean Hokkien Fried Mee","SupplierID":20,"Unit":"32 - 1 kg pkgs."}
+{"CategoryID":1,"Price":46.0,"ProductID":43,"ProductName":"Ipoh Coffee","SupplierID":20,"Unit":"16 - 500 g tins"}
+{"CategoryID":2,"Price":19.45,"ProductID":44,"ProductName":"Gula Malacca","SupplierID":20,"Unit":"20 - 2 kg bags"}
+{"CategoryID":8,"Price":9.5,"ProductID":45,"ProductName":"R�gede sild","SupplierID":21,"Unit":"1k pkg."}
+{"CategoryID":8,"Price":12.0,"ProductID":46,"ProductName":"Spegesild","SupplierID":21,"Unit":"4 - 450 g glasses"}
+{"CategoryID":3,"Price":9.5,"ProductID":47,"ProductName":"Zaanse koeken","SupplierID":22,"Unit":"10 - 4 oz boxes"}
+{"CategoryID":3,"Price":12.75,"ProductID":48,"ProductName":"Chocolade","SupplierID":22,"Unit":"10 pkgs."}
+{"CategoryID":3,"Price":20.0,"ProductID":49,"ProductName":"Maxilaku","SupplierID":23,"Unit":"24 - 50 g pkgs."}
+{"CategoryID":3,"Price":16.25,"ProductID":50,"ProductName":"Valkoinen suklaa","SupplierID":23,"Unit":"12 - 100 g bars"}
+{"CategoryID":7,"Price":53.0,"ProductID":51,"ProductName":"Manjimup Dried Apples","SupplierID":24,"Unit":"50 - 300 g pkgs."}
+{"CategoryID":5,"Price":7.0,"ProductID":52,"ProductName":"Filo Mix","SupplierID":24,"Unit":"16 - 2 kg boxes"}
+{"CategoryID":6,"Price":32.8,"ProductID":53,"ProductName":"Perth Pasties","SupplierID":24,"Unit":"48 pieces"}
+{"CategoryID":6,"Price":7.45,"ProductID":54,"ProductName":"Tourti�re","SupplierID":25,"Unit":"16 pies"}
+{"CategoryID":6,"Price":24.0,"ProductID":55,"ProductName":"P�t� chinois","SupplierID":25,"Unit":"24 boxes x 2 pies"}
+{"CategoryID":5,"Price":38.0,"ProductID":56,"ProductName":"Gnocchi di nonna Alice","SupplierID":26,"Unit":"24 - 250 g pkgs."}
+{"CategoryID":5,"Price":19.5,"ProductID":57,"ProductName":"Ravioli Angelo","SupplierID":26,"Unit":"24 - 250 g pkgs."}
+{"CategoryID":8,"Price":13.25,"ProductID":58,"ProductName":"Escargots de Bourgogne","SupplierID":27,"Unit":"24 pieces"}
+{"CategoryID":4,"Price":55.0,"ProductID":59,"ProductName":"Raclette Courdavault","SupplierID":28,"Unit":"5 kg pkg."}
+{"CategoryID":4,"Price":34.0,"ProductID":60,"ProductName":"Camembert Pierrot","SupplierID":28,"Unit":"15 - 300 g rounds"}
+{"CategoryID":2,"Price":28.5,"ProductID":61,"ProductName":"Sirop d'�rable","SupplierID":29,"Unit":"24 - 500 ml bottles"}
+{"CategoryID":3,"Price":49.3,"ProductID":62,"ProductName":"Tarte au sucre","SupplierID":29,"Unit":"48 pies"}
+{"CategoryID":2,"Price":43.9,"ProductID":63,"ProductName":"Vegie-spread","SupplierID":7,"Unit":"15 - 625 g jars"}
+{"CategoryID":5,"Price":33.25,"ProductID":64,"ProductName":"Wimmers gute Semmelkn�del","SupplierID":12,"Unit":"20 bags x 4 pieces"}
+{"CategoryID":2,"Price":21.05,"ProductID":65,"ProductName":"Louisiana Fiery Hot Pepper Sauce","SupplierID":2,"Unit":"32 - 8 oz bottles"}
+{"CategoryID":2,"Price":17.0,"ProductID":66,"ProductName":"Louisiana Hot Spiced Okra","SupplierID":2,"Unit":"24 - 8 oz jars"}
+{"CategoryID":1,"Price":14.0,"ProductID":67,"ProductName":"Laughing Lumberjack Lager","SupplierID":16,"Unit":"24 - 12 oz bottles"}
+{"CategoryID":3,"Price":12.5,"ProductID":68,"ProductName":"Scottish Longbreads","SupplierID":8,"Unit":"10 boxes x 8 pieces"}
+{"CategoryID":4,"Price":36.0,"ProductID":69,"ProductName":"Gudbrandsdalsost","SupplierID":15,"Unit":"10 kg pkg."}
+{"CategoryID":1,"Price":15.0,"ProductID":70,"ProductName":"Outback Lager","SupplierID":7,"Unit":"24 - 355 ml bottles"}
+{"CategoryID":4,"Price":21.5,"ProductID":71,"ProductName":"Fl�temysost","SupplierID":15,"Unit":"10 - 500 g pkgs."}
+{"CategoryID":4,"Price":34.8,"ProductID":72,"ProductName":"Mozzarella di Giovanni","SupplierID":14,"Unit":"24 - 200 g pkgs."}
+{"CategoryID":8,"Price":15.0,"ProductID":73,"ProductName":"R�d Kaviar","SupplierID":17,"Unit":"24 - 150 g jars"}
+{"CategoryID":7,"Price":10.0,"ProductID":74,"ProductName":"Longlife Tofu","SupplierID":4,"Unit":"5 kg pkg."}
+{"CategoryID":1,"Price":7.75,"ProductID":75,"ProductName":"Rh�nbr�u Klosterbier","SupplierID":12,"Unit":"24 - 0.5 l bottles"}
+{"CategoryID":1,"Price":18.0,"ProductID":76,"ProductName":"Lakkalik��ri","SupplierID":23,"Unit":"500 ml"}
+{"CategoryID":2,"Price":13.0,"ProductID":77,"ProductName":"Original Frankfurter gr�ne So�e","SupplierID":12,"Unit":"12 boxes"}
