@@ -9,8 +9,7 @@
 
 
 class ImportManagementModel: public WarehouseManagementModel{
-private:
-
+// private:
 
 public:
     ImportManagementModel();
