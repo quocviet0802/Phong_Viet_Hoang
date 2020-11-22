@@ -25,6 +25,6 @@ public:
     int GetSize();
     int ExportToFile(string);
     
-    friend class ImportManagementModel;
+    vector<Suppliers> getSuppliersDataList();
 };
 #endif

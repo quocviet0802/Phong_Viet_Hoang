@@ -130,6 +130,10 @@ Suppliers* SuppliersData::GetSupplierByName(string name){
 }
 
 
+vector<Suppliers> SuppliersData::getSuppliersDataList(){
+    return ListSuppliersData;
+}
+
 
 
 

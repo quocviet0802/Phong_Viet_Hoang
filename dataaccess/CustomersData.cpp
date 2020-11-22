@@ -101,3 +101,8 @@ int CustomersData::ExportToFile(string filename){
     outFile.close();
     return 1;
 }
+
+
+vector<Customers> CustomersData::getCustomersDataList(){
+    return _data;
+}

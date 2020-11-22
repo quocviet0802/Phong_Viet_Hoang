@@ -4,16 +4,17 @@
 #include <vector>
 #include <string>
 #include "WarehouseManagementModel.h"
-#include "../dataaccess/ShippersData.h"
-#include "../dataaccess/SuppliersData.h"
-
 
 class ImportManagementModel: public WarehouseManagementModel{
-// private:
-
 public:
     ImportManagementModel();
+    ~ImportManagementModel();
     void ExportReport();
+
+    bool ShowStatisticsFlowProductID(int);
+    bool ShowStatisticsFlowCategoryName(string);
+    bool ShowStatisticsFlowSupplierName(string);
+
 };
 
 

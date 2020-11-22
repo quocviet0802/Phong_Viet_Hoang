@@ -100,3 +100,8 @@ int EmployeesData::ExportToFile(string filename){
     outFile.close();
     return 1;
 }
+
+
+vector<Employees> EmployeesData::getEmployeesDataList(){
+    return _data;
+}

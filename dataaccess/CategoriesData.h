@@ -16,5 +16,8 @@ public:
     Categories Get(int);
     int GetSize();
     int ExportToFile(string);
+
+    vector<Categories> getCategoriesDataList();
+
 };
 #endif
