@@ -33,18 +33,65 @@ using json = nlohmann::json;
 
 
 void ImportManagement(){
-	ImportManagementModel importModel;
-	importModel.GetDataOrder();
-	importModel.ExportReport();
-	// importModel.ShowStatisticsFlowProductID(16);
-	// importModel.ShowStatisticsFlowCategoryName("Beverages");
-	importModel.ShowStatisticsFlowSupplierName("Around the Horn");
+	
 
 }
 
 
 int main(int argc, char** argv) {
-	ImportManagement();
+
+	do
+	{	
+		system("CLS");
+		cout << "1. Quan ly Nhap Hang" << endl;
+		cout << "2. Quan ly Xuat Hang" << endl; 
+		cout << "3. Quan ly Hang Ton" << endl;
+		cout << "4. Quan ly Danh Muc" << endl; 
+		cout << "5. Quan ly He Thong Du Lieu" << endl;
+		cout << "6. Exit" << endl << endl;
+        cout << "---nhap option : ";
+
+		int n;
+        cin >> n;
+        switch (n)
+        {
+        case 1:
+        {
+            ImportManagementModel importModel;
+			importModel.GetDataOrder();
+			importModel.ImportManagement();
+			break;
+        }
+        case 2:
+        {
+            cout << "Ahihi";
+			break;
+        }
+        case 3:
+        {
+			cout << "Ahaha";
+			break;
+        }
+        case 4:
+        {
+			cout << "Ahehe";
+			break;
+        }
+		case 5:
+        {
+			cout << "Ahuhu";
+			break;
+        }
+		case 6:
+        {
+			return 0;
+        }
+        default:
+            break;
+        }
+
+	} while (1);
+	
 	return 0;
 }
 

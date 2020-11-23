@@ -20,7 +20,7 @@ void ExportManagementModel::ExportReport(){
 
 }
 
-bool ExportManagementModel::ShowStatisticsFlowProductID(int id){
+bool ExportManagementModel::ShowStatisticsFollowProductID(int id){
     bool FlagCheck = false;
 
     WarehouseManagementModel::ShowTable();
@@ -38,7 +38,7 @@ bool ExportManagementModel::ShowStatisticsFlowProductID(int id){
 }
 
 
-bool ExportManagementModel::ShowStatisticsFlowCategoryName(string name){
+bool ExportManagementModel::ShowStatisticsFollowCategoryName(string name){
     bool FlagCheck = false;
 
     WarehouseManagementModel::ShowTable();
@@ -65,7 +65,7 @@ bool ExportManagementModel::ShowStatisticsFlowCategoryName(string name){
 }
 
 
-bool ExportManagementModel::ShowStatisticsFlowSupplierName(string name){
+bool ExportManagementModel::ShowStatisticsFollowSupplierName(string name){
     bool FlagCheck = false;
 
     ShowTable();

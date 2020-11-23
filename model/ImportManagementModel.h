@@ -9,11 +9,14 @@ class ImportManagementModel: public WarehouseManagementModel{
 public:
     ImportManagementModel();
     ~ImportManagementModel();
-    void ExportReport();
+    
+    bool ShowStatisticsFollowProductID(int);
+    bool ShowStatisticsFollowCategoryID(int);
+    bool ShowStatisticsFollowSupplierID(int);
 
-    bool ShowStatisticsFlowProductID(int);
-    bool ShowStatisticsFlowCategoryName(string);
-    bool ShowStatisticsFlowSupplierName(string);
+    void ExportReport();
+    void ImportManagement();
+    void InputDataToDB();
 
 };
 

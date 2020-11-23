@@ -12,6 +12,7 @@
 
 #include <vector>
 #include <string>
+#include <time.h>
 
 class WarehouseManagementModel{
 // private:
@@ -25,6 +26,9 @@ protected:
     vector<Shippers> DataShippers;
     vector<Suppliers> DataSuppliers;
 
+    string TimeStart;
+    string TimeEnd;
+
 public:
     WarehouseManagementModel();
     ~WarehouseManagementModel();
@@ -36,15 +40,21 @@ public:
     string GetCustomerNameByID(int);
     string GetCategoryNameByID(int);
 
-    void ShowTable();
-    void ShowData(int, int, string, string, string, double, int, string, string, string);
+    string GetOrderDateByID(int);
 
-    virtual bool ShowStatisticsFlowProductID(int) = 0;
-    virtual bool ShowStatisticsFlowCategoryName(string) = 0;
-    virtual bool ShowStatisticsFlowSupplierName(string) = 0;
+    void ShowTable();
+    void ShowData(int, int, string, int, double, int, string);
+
+    virtual bool ShowStatisticsFollowProductID(int) = 0;
+    virtual bool ShowStatisticsFollowCategoryID(int) = 0;
+    virtual bool ShowStatisticsFollowSupplierID(int) = 0;
     void ShowDataOfStatistics(int, int, int);
 
-    virtual void ExportReport();   
+    tm string2time(string);
+    bool CheckInTime(string, string , string);
+    int TimeCompare(tm, tm);
+
+    virtual void ExportReport();  
 };
 
 

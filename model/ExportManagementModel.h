@@ -11,9 +11,9 @@ public:
     ~ExportManagementModel();
     void ExportReport();
 
-    bool ShowStatisticsFlowProductID(int);
-    bool ShowStatisticsFlowCategoryName(string);
-    bool ShowStatisticsFlowSupplierName(string);
+    bool ShowStatisticsFollowProductID(int);
+    bool ShowStatisticsFollowCategoryName(string);
+    bool ShowStatisticsFollowSupplierName(string);
 
 };
 

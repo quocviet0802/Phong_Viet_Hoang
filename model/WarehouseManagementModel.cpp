@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <math.h>
 
 using namespace std;
 
@@ -89,53 +90,56 @@ string WarehouseManagementModel::GetSupplierNameByID(int id){
     return supplier_name;
 }
 
+string WarehouseManagementModel::GetOrderDateByID(int id){
+    string date_order = "";
+    for(Order item:DataOrders){
+        if(item.OrderID == id){
+            date_order = item.OrderDate;
+        }
+    }
+    return date_order;
+}
 
 void WarehouseManagementModel::ShowTable(){
     cout << endl << endl;
     cout << setw(10) << left << "Order_ID";
-    cout << setw(12) << left << "Product_ID";
-    cout << setw(30) << left << "Product_Name";
-    cout << setw(17) << left << "Category_Name";
-    cout << setw(22) << left << "Unit" ;
-    cout << setw(7) << left << "Price";
+    cout << setw(15) << left << "Product_ID";
+    cout << setw(35) << left << "Product_Name";
+    cout << setw(15) << left << "Category_ID";
+    cout << setw(10) << left << "Price";
     cout << setw(10) << left << "Quantity";
-    cout << setw(30) << left << "Supplier";
-    cout << setw(14) << left << "Order_Date";
-    cout << setw(20) << left << "Shipper_Name" << endl;
+    cout << setw(25) << left << "Order_Date";
+    cout << setw(15) << left << "Cost" << endl;
+ 
     cout << setfill('-');
-    cout << setw(160) << "-" << endl;
+    cout << setw(130) << "-" << endl;
     cout << setfill(' ');
 }
 
-void WarehouseManagementModel::ShowData(int o_id, int p_id, string p_name, string c_name, string u, double p, int q, string s, string o_d, string s_n){
+void WarehouseManagementModel::ShowData(int o_id, int p_id, string p_name, int c_id, double p, int q, string o_d){
     cout << setw(10) << left << o_id;
-    cout << setw(12) << left << p_id;
-    cout << setw(30) << left << p_name;
-    cout << setw(17) << left << c_name;
-    cout << setw(22) << left << u ;
-    cout << setw(7) << left << p;
+    cout << setw(15) << left << p_id;
+    cout << setw(35) << left << p_name;
+    cout << setw(15) << left << c_id;
+    cout << setw(10) << left << p;
     cout << setw(10) << left << q;
-    cout << setw(30) << left << s;
-    cout << setw(14) << left << o_d;
-    cout << setw(20) << left << s_n << endl;
+    cout << setw(25) << left << o_d;
+    cout << setw(15) << left << fabs(double(p*q)) << endl;
+
 }
 
 void WarehouseManagementModel::ShowDataOfStatistics(int product_id, int order_id, int quanlity){
 
     string product_name = "NULL";
-    string unit = "NULL";
     double price = 0;
-    string category_name = "NULL";
-    string supplier = "NULL";
+    int category_id = 0;
     string order_date = "NULL";
-    string shipper_name = "NULL";
 
     for(Product product: DataProducts){
         if(product_id == product.ProductID){
             product_name = product.ProductName;
-            unit = product.Unit;
             price = product.Price;
-            category_name = GetCategoryNameByID(product.CategoryID);
+            category_id = product.CategoryID;
             break;
         }
     }
@@ -145,7 +149,7 @@ void WarehouseManagementModel::ShowDataOfStatistics(int product_id, int order_id
             string order_date = order.OrderDate;
             string shipper_name = GetShipperNameByID(order.ShipperID);
             
-            ShowData(order_id, product_id, product_name, category_name, unit, price, quanlity, supplier, order_date, shipper_name);
+            ShowData(order_id, product_id, product_name, category_id, price, quanlity, order_date);
         }
     }
 
@@ -153,3 +157,43 @@ void WarehouseManagementModel::ShowDataOfStatistics(int product_id, int order_id
 }
 
 
+tm WarehouseManagementModel::string2time(string str){
+    const char* charstar = str.c_str();
+    int tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec;
+    tm tm1 = {0};
+	sscanf(charstar,"%4d-%2d-%2d",&tm1.tm_year,&tm1.tm_mon,&tm1.tm_mday);
+    return tm1;
+}
+
+int WarehouseManagementModel::TimeCompare(tm tm1, tm tm2){
+    if (tm1.tm_year > tm2.tm_year) return 1;
+    else if (tm1.tm_year < tm2.tm_year) return -1;
+    else 
+    if (tm1.tm_mon > tm2.tm_mon) return 1;
+    else if (tm1.tm_mon < tm2.tm_mon) return -1; 
+    else
+    if (tm1.tm_mday > tm2.tm_mday) return 1;
+    else if (tm1.tm_mday < tm2.tm_mday) return -1;  
+    else return 0;
+}
+
+bool WarehouseManagementModel::CheckInTime(string time_start, string time_end, string time_check){
+    tm start = string2time(time_start);
+    tm end = string2time(time_end);
+    tm check = string2time(time_check);
+
+    int check_rank = TimeCompare(start, end);
+
+    if(check_rank < 0){
+        int compare_start = TimeCompare(check, start);
+        int compare_end = TimeCompare(end, check);
+
+        return (compare_start >= 0 && compare_end >= 0) ? true : false;
+
+    }else{
+        int compare_start = TimeCompare(check, start);
+        int compare_end = TimeCompare(end, check);
+
+        return (compare_start <= 0 && compare_end <= 0) ? true :  false;
+    }
+}
