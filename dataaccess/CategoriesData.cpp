@@ -97,3 +97,7 @@ int CategoriesData::ExportToFile(string filename){
     outFile.close();
     return 1;
 }
+
+vector<Categories> CategoriesData::getCategoriesDataList(){
+    return _data;
+}

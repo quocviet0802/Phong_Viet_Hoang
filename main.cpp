@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include <fstream>
 #include <stdio.h>
 #include <string.h>
@@ -21,6 +22,8 @@
 #include "dataaccess/ShippersData.h"
 #include "dataaccess/SuppliersData.h"
 
+#include "model/ImportManagementModel.h"
+
 #include "libs/json.hpp"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -29,10 +32,66 @@ using namespace std;
 using json = nlohmann::json;
 
 
+void ImportManagement(){
+	
+
+}
+
+
 int main(int argc, char** argv) {
 
+	do
+	{	
+		system("CLS");
+		cout << "1. Quan ly Nhap Hang" << endl;
+		cout << "2. Quan ly Xuat Hang" << endl; 
+		cout << "3. Quan ly Hang Ton" << endl;
+		cout << "4. Quan ly Danh Muc" << endl; 
+		cout << "5. Quan ly He Thong Du Lieu" << endl;
+		cout << "6. Exit" << endl << endl;
+        cout << "---nhap option : ";
 
+		int n;
+        cin >> n;
+        switch (n)
+        {
+        case 1:
+        {
+            ImportManagementModel importModel;
+			importModel.GetDataOrder();
+			importModel.ImportManagement();
+			break;
+        }
+        case 2:
+        {
+            cout << "Ahihi";
+			break;
+        }
+        case 3:
+        {
+			cout << "Ahaha";
+			break;
+        }
+        case 4:
+        {
+			cout << "Ahehe";
+			break;
+        }
+		case 5:
+        {
+			cout << "Ahuhu";
+			break;
+        }
+		case 6:
+        {
+			return 0;
+        }
+        default:
+            break;
+        }
 
+	} while (1);
+	
 	return 0;
 }
 

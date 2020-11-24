@@ -16,5 +16,8 @@ public:
     Employees Get(int);
     int GetSize();
     int ExportToFile(string);
+
+    vector<Employees> getEmployeesDataList();
+
 };
 #endif

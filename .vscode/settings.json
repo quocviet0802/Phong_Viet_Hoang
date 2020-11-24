@@ -5,7 +5,11 @@
         "memory": "cpp",
         "istream": "cpp",
         "functional": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "string": "cpp",
+        "iomanip": "cpp",
+        "typeinfo": "cpp",
+        "random": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

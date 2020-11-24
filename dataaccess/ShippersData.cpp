@@ -125,6 +125,10 @@ Shippers* ShippersData::GetShipperByName(string name){
 }
 
 
+vector<Shippers> ShippersData::getShippersDataList(){
+    return ListShippersData;
+}
+
 
 
 
