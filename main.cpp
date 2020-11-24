@@ -45,13 +45,13 @@ int main(int argc, char** argv) {
 	do
 	{	
 		system("CLS");
-		cout << "1. Quan ly Nhap Hang" << endl;
-		cout << "2. Quan ly Xuat Hang" << endl; 
-		cout << "3. Quan ly Hang Ton" << endl;
-		cout << "4. Quan ly Danh Muc" << endl; 
-		cout << "5. Quan ly He Thong Du Lieu" << endl;
+		cout << "1. Import Management" << endl;
+		cout << "2. Export Management" << endl; 
+		cout << "3. Inventory Manager" << endl;
+		cout << "4. Category Manegement" << endl; 
+		cout << "5. Management of Data Systems" << endl;
 		cout << "6. Exit" << endl << endl;
-        cout << "---nhap option : ";
+        cout << "Select : ";
 
 		int n;
         cin >> n;

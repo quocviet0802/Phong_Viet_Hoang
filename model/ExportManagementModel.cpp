@@ -108,10 +108,10 @@ void ExportManagementModel::ExportManagement(){
     do
     {
         system("CLS");
-        cout << "1. Them thong tin"<<endl;
-        cout << "2. Xuat hoa don"<<endl;
+        cout << "1. Input New Data"<<endl;
+        cout << "2. Export Statistics"<<endl;
         cout << "3. Exit" <<endl;
-        cout << "---nhap option : ";
+        cout << "Select: ";
         int n;
         cin >> n;
         switch (n)
@@ -144,7 +144,7 @@ void ExportManagementModel::ExportManagement(){
 void ExportManagementModel::ExportReport(){
 
     system("CLS");
-    cout << "Nhap Thoi Gian Can Xuat Bao Cao " << endl;
+    cout << "Enter The Time Period" << endl;
     cout << "From (YYYY-MM-DD) : ";
     cin >> TimeStart;
     cout << "To (YYYY-MM-DD): ";
@@ -153,11 +153,11 @@ void ExportManagementModel::ExportReport(){
     do
     {
         system("CLS");
-        cout << "Xuat Bao Cao Theo" << endl;
-        cout << "1. Xuat theo product id"<< endl;
-        cout << "2. Xuat theo category id"<< endl;
-        cout << "3. Xuat theo customer id"<< endl;
-  
+        cout << "1. Export Statistics With Product ID"<< endl;
+        cout << "2. Export Statistics With Category ID"<< endl;
+        cout << "3. Export Statistics With Supplier ID"<< endl;
+        cout << "4. Exit"<< endl;
+        cout << "Select: "<< endl;  
 
         int n;
         cin >> n;
@@ -165,7 +165,7 @@ void ExportManagementModel::ExportReport(){
         {
         case 1:
         {
-            cout << "nhap product id : ";
+            cout << "Input Product ID: ";
             int id;
             cin >> id;
             ShowStatisticsFollowProductID(id);
@@ -174,7 +174,7 @@ void ExportManagementModel::ExportReport(){
         }
         case 2:
         {
-            cout << "nhap category id : ";
+            cout << "Input Category ID: ";
             int id;
             cin >> id;
             ShowStatisticsFollowCategoryID(id);
@@ -183,7 +183,7 @@ void ExportManagementModel::ExportReport(){
         }
         case 3:
         {
-            cout << "nhap supplier id : ";
+            cout << "Input Supplier ID: ";
             int id;
             cin >> id;
             ShowStatisticsFollowSupplierID(id);

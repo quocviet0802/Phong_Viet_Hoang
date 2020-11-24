@@ -272,23 +272,23 @@ bool WarehouseManagementModel::CheckInTime(string time_start, string time_end, s
  */
 void WarehouseManagementModel::InputDataToDB(){
     system("CLS");
-    cout << "Nhap thong tin order" << endl;
+    cout << "Input Order Information" << endl;
 
-    cout << "Nhap Customer ID :";
+    cout << "Input Customer ID :";
     int customer_id;
     cin >> customer_id;
 
-    cout << "Nhap Employee ID :";
+    cout << "Input Employee ID :";
     int employee_id;
     cin >> employee_id;
 
-    cout << "Nhap order date (DD/MM/YYYY): ";
+    cout << "Input Order Date (DD/MM/YYYY): ";
     string order_date;
     cin.clear();
     fflush(stdin);
     getline(cin, order_date);
 
-    cout << "Nhap shipper ID :";
+    cout << "Input Shipper ID :";
     int shipper_id;
     cin >> shipper_id;
 
@@ -302,12 +302,12 @@ void WarehouseManagementModel::InputDataToDB(){
 
         system("CLS");
         cout << endl;
-        cout << "Nhap thong tin cac product cua order" << endl;
+        cout << "Input Product Information of Order" << endl;
 
         int product_id;
-        cout << "Nhap Product ID: ";
+        cout << "Input Product ID: ";
         cin >> product_id;
-        cout << "Nhap  Quanlity: ";
+        cout << "Input  Quanlity: ";
         int quanlity;
         cin >> quanlity;
 
@@ -316,7 +316,7 @@ void WarehouseManagementModel::InputDataToDB(){
         odersdetails.createOrderDetail(order_id, product_id, quanlity);
         odersdetails.exportDataToFile();
 
-        cout << "nhap tiep [Y/N] :";
+        cout << "Continue [Y/N] :";
         cin >> check;
 
     }while(check == 'Y' || check == 'y');
