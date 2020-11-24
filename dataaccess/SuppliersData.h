@@ -26,5 +26,15 @@ public:
     int ExportToFile(string);
     
     vector<Suppliers> getSuppliersDataList();
+
+
+    //[PHI]
+    vector<Suppliers> GetSupplierList();
+    bool ImportDataFromCSVFile();
+    bool isIDValided(int supplierID);
+    bool updateSupplierByID(int supplierID,Suppliers supplier);
+    bool deleteSupplierByID(int supplierID);
+    void printList();
+
 };
 #endif

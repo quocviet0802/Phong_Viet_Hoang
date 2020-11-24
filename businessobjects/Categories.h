@@ -6,6 +6,14 @@
 using namespace std;
 using json = nlohmann::json;
 
+//[PHI] - make it clearly
+enum class CATEGORIES_PROPS
+{
+    ID,
+    NAME,
+    DESCRIPTION
+};
+
 class Categories{
 public:
     int CategoryId;
