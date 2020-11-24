@@ -198,3 +198,64 @@ void ExportManagementModel::ExportReport(){
 
     } while (1);
 }
+
+
+/** @brief Input data press from keyboard to db file
+ *  A function to Input data press from keyboard to db file
+ *  @return a bool type
+ *  @author VietmQ
+ */
+void ExportManagementModel::InputDataToDB(){
+    system("CLS");
+    cout << "Input Order Information" << endl;
+
+    cout << "Input Customer ID :";
+    int customer_id;
+    cin >> customer_id;
+
+    cout << "Input Employee ID :";
+    int employee_id;
+    cin >> employee_id;
+
+    cout << "Input Order Date (DD/MM/YYYY): ";
+    string order_date;
+    cin.clear();
+    fflush(stdin);
+    getline(cin, order_date);
+
+    cout << "Input Shipper ID :";
+    int shipper_id;
+    cin >> shipper_id;
+
+    OrdersData oders;
+    oders.importDataFromJsonFile();
+    int order_id = oders.createOrder(customer_id, employee_id, order_date, shipper_id);
+    oders.exportDataToFile();
+
+    char check;
+    do{
+
+        system("CLS");
+        cout << endl;
+        cout << "Input Product Information of Order" << endl;
+
+        int product_id;
+        cout << "Input Product ID: ";
+        cin >> product_id;
+        cout << "Input Quanlity: ";
+        int quanlity;
+        cin >> quanlity;
+
+        quanlity *= -1;
+
+        OrderDetailsData odersdetails;
+        odersdetails.importDataFromJsonFile();
+        odersdetails.createOrderDetail(order_id, product_id, quanlity);
+        odersdetails.exportDataToFile();
+
+        cout << "Continue [Y/N] :";
+        cin >> check;
+
+    }while(check == 'Y' || check == 'y');
+
+}

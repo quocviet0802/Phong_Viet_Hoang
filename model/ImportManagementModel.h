@@ -16,6 +16,7 @@ public:
 
     void ExportReport();
     void ImportManagement();
+    void InputDataToDB();
 };
 
 
