@@ -49,20 +49,21 @@ void TableManagementModel::run()
         case (int)TABLE::CUSTOMER:
         {
             //FIXME:
-            CustomersData customerData("RawDatas/CustomersData.json");
+            CustomersData customerData("RawDatas/Customers.txt");
             customerData.printList();
             break;
         }
         case (int)TABLE::CATEGORY :
         {
-            CategoriesData categoriesData("RawDatas/CategoriesData.json");
+            CategoriesData categoriesData("RawDatas/Categories.txt");
             categoriesData.printList();
             break;
         }
         case (int)TABLE::EMPLOYEE :
         {
             //FIXME: 
-            EmployeesData employeesData("RawDatas/EmployeesData.json");
+            EmployeesData employeesData("RawDatas/Employees.txt");
+            cout<< "size: "<< employeesData.GetSize()<<endl;
             employeesData.printList();
             break;
         }

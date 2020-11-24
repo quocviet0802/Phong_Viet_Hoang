@@ -24,6 +24,7 @@
 
 #include "model/ImportManagementModel.h"
 #include "model/ExportManagementModel.h"
+#include "model/CategoryManegementModel.h"
 
 #include "libs/json.hpp"
 
@@ -77,7 +78,7 @@ int main(int argc, char** argv) {
         }
         case 4:
         {
-			cout << "Ahehe";
+			CategoryManegementModel::getInstance()->run();
 			break;
         }
 		case 5:

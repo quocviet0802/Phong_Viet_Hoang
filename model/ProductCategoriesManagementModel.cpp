@@ -11,7 +11,7 @@ ProductCategoriesManagementModel *ProductCategoriesManagementModel::instance = n
 ProductCategoriesManagementModel::ProductCategoriesManagementModel()
 {
     categoryName = "Categories";
-    categoriesData = new CategoriesData("RawDatas/CategoriesData.json");
+    categoriesData = new CategoriesData("RawDatas/Categories.txt");
 }
 
 ProductCategoriesManagementModel::~ProductCategoriesManagementModel()

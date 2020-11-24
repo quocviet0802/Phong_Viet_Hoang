@@ -34,6 +34,7 @@ SuppliersData::SuppliersData(string filename){
             j["Country"],
             j["Phone"]
         );
+        maxId = maxId < Supplier.SupplierID? Supplier.SupplierID : maxId;
         ListSuppliersData.push_back(Supplier);
     }
     inFile.close();

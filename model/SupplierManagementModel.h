@@ -4,7 +4,7 @@
 #include"../dataaccess/SuppliersData.h"
 using namespace std;
 
-#define filename "RawDatas/SuppliersData.json"
+#define filename "RawDatas/Suppliers.txt"
 class SupplierManagementModel : public CRUDManagementModel
 {
 private:

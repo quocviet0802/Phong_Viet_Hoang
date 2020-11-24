@@ -20,7 +20,7 @@ EmployeesData::EmployeesData(string filename){
     maxId = 0;
     _data.resize(0);
     ifstream inFile(filename);
-    const int maxSize = 255;
+    const int maxSize = 1000;
     char buff[maxSize]; 
     while (inFile.getline(buff,maxSize)){
         json j = json::parse(buff);
