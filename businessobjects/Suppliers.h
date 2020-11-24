@@ -4,6 +4,19 @@
 #include <string>
 #include "../libs/json.hpp"
 
+//[PHI] - make it clearly
+enum class SUPPLIER_PROPS
+{
+    ID,
+    NAME,
+    CONTACT_NAME,
+    ADDRESS,
+    CITY,
+    POSTAL_CODE,
+    COUNTRY,
+    PHONE
+};
+
 using namespace std;
 using json = nlohmann::json;
 
