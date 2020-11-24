@@ -29,11 +29,12 @@ bool ExportManagementModel::ShowStatisticsFollowProductID(int id){
 
     for(OrderDetails item: DataOrderDetails){
         string oder_date = GetOrderDateByID(item.OrderID);
-        if ( (oder_date != "") ? CheckInTime(TimeStart, TimeEnd, oder_date) : false) continue;
-        if(item.ProductID == id){
-            if(item.Quantity > 0) continue;
-            ShowDataOfStatistics(item.ProductID, item.OrderID, item.Quantity);
-            FlagCheck = true;
+        if (CheckInTime(TimeStart, TimeEnd, oder_date)){
+            if(item.ProductID == id){
+                if(item.Quantity > 0) continue;
+                ShowDataOfStatistics(item.ProductID, item.OrderID, item.Quantity);
+                FlagCheck = true;
+            }
         }
     }
 
@@ -57,10 +58,11 @@ bool ExportManagementModel::ShowStatisticsFollowCategoryID(int id){
             for(OrderDetails item2: DataOrderDetails){
                 if(item2.ProductID == item.ProductID){
                     string oder_date = GetOrderDateByID(item2.OrderID);
-                    if ( (oder_date != "") ? CheckInTime(TimeStart, TimeEnd, oder_date) : false) continue;
-                    if(item2.Quantity > 0) continue;
-                    ShowDataOfStatistics(item2.ProductID, item2.OrderID, item2.Quantity);
-                    FlagCheck = true;
+                    if (CheckInTime(TimeStart, TimeEnd, oder_date)){
+                        if(item2.Quantity > 0) continue;
+                        ShowDataOfStatistics(item2.ProductID, item2.OrderID, item2.Quantity);
+                        FlagCheck = true;
+                    }
                 }
             }
         }
@@ -76,19 +78,20 @@ bool ExportManagementModel::ShowStatisticsFollowCategoryID(int id){
  *  @return true if success, false if fail
  *  @author VietmQ
  */
-bool ExportManagementModel::ShowStatisticsFollowSupplierID(int id){
+bool ExportManagementModel::ShowStatisticsFollowCustomerID(int id){
     bool FlagCheck = false;
 
     ShowTable();
 
     for(Order item: DataOrders){
         if(item.CustomerID == id){
-            if( CheckInTime(TimeStart, TimeEnd, item.OrderDate) ) continue;
-            for(OrderDetails item2: DataOrderDetails){
-                if(item2.OrderID == item.OrderID){
-                    if(item2.Quantity > 0) continue;
-                    ShowDataOfStatistics(item2.ProductID, item2.OrderID, item2.Quantity);
-                    FlagCheck = true;
+            if (CheckInTime(TimeStart, TimeEnd, item.OrderDate)){
+                for(OrderDetails item2: DataOrderDetails){
+                    if(item2.OrderID == item.OrderID){
+                        if(item2.Quantity > 0) continue;
+                        ShowDataOfStatistics(item2.ProductID, item2.OrderID, item2.Quantity);
+                        FlagCheck = true;
+                    }
                 }
             }
         }
@@ -145,7 +148,7 @@ void ExportManagementModel::ExportReport(){
 
     system("CLS");
     cout << "Enter The Time Period" << endl;
-    cout << "From (YYYY-MM-DD) : ";
+    cout << "From (YYYY-MM-DD): ";
     cin >> TimeStart;
     cout << "To (YYYY-MM-DD): ";
     cin >> TimeEnd;
@@ -186,7 +189,7 @@ void ExportManagementModel::ExportReport(){
             cout << "Input Supplier ID: ";
             int id;
             cin >> id;
-            ShowStatisticsFollowSupplierID(id);
+            ShowStatisticsFollowCustomerID(id);
             getch();
             return;
         }
@@ -209,11 +212,11 @@ void ExportManagementModel::InputDataToDB(){
     system("CLS");
     cout << "Input Order Information" << endl;
 
-    cout << "Input Customer ID :";
+    cout << "Input Customer ID ('intput ID is 0 if New Customer): ";
     int customer_id;
     cin >> customer_id;
 
-    cout << "Input Employee ID :";
+    cout << "Input Employee ID: ";
     int employee_id;
     cin >> employee_id;
 
@@ -223,14 +226,66 @@ void ExportManagementModel::InputDataToDB(){
     fflush(stdin);
     getline(cin, order_date);
 
-    cout << "Input Shipper ID :";
+    cout << "Input Shipper ID: ";
     int shipper_id;
     cin >> shipper_id;
+
+    if(customer_id == 0){
+        cout << "Input 'Name' of new customer: ";
+        string name;
+        cin.clear();
+        fflush(stdin);
+        getline(cin, name);
+
+        cout << "Input 'Contact Name' of new customer: ";
+        string contact;
+        cin.clear();
+        fflush(stdin);
+        getline(cin, contact);
+
+        cout << "Input 'Address' of new customer: ";
+        string address;
+        cin.clear();
+        fflush(stdin);
+        getline(cin, address);
+        
+        cout << "Input 'City' of new customer: ";
+        string city;
+        cin.clear();
+        fflush(stdin);
+        getline(cin, city);
+
+        cout << "Input 'Postal Code' of new customer: ";
+        string portal_code;
+        cin.clear();
+        fflush(stdin);
+        getline(cin, portal_code);
+
+        cout << "Input 'Country' of new customer: ";
+        string country;
+        cin.clear();
+        fflush(stdin);
+        getline(cin, country);
+
+        cout << "Enter to save 'Customer Information': ";
+        getch();
+
+        CustomersData customer("RawDatas/Customers.txt");
+        customer_id = customer.createCustomers(name, contact, address, city, portal_code, country);
+        customer.ExportToFile("RawDatas/Customers.txt");
+
+        cout << " Done !" << endl;
+    }
+
+    cout << "Enter to save 'Order Information': ";
+    getch();
 
     OrdersData oders;
     oders.importDataFromJsonFile();
     int order_id = oders.createOrder(customer_id, employee_id, order_date, shipper_id);
     oders.exportDataToFile();
+
+    cout << " Done !" << endl;
 
     char check;
     do{
@@ -253,7 +308,7 @@ void ExportManagementModel::InputDataToDB(){
         odersdetails.createOrderDetail(order_id, product_id, quanlity);
         odersdetails.exportDataToFile();
 
-        cout << "Continue [Y/N] :";
+        cout << "Continue [Y/N]: ";
         cin >> check;
 
     }while(check == 'Y' || check == 'y');

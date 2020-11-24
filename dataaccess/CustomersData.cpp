@@ -7,8 +7,11 @@
 
 #include "CustomersData.h"
 #include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
 #include "../libs/json.hpp"
-#include<iostream>
+#include <iostream>
 using namespace std;
 using json = nlohmann::json;
 
@@ -34,6 +37,11 @@ CustomersData::CustomersData(string filename){
             j["PostalCode"],
             j["Country"]
         );
+
+        int CustomerID;
+        stringstream(j["CustomerId"].dump()) >> CustomerID;
+
+        maxId = CustomerID < maxId ? maxId : CustomerID;
         _data.push_back(p);
     }
     inFile.close();
@@ -68,6 +76,14 @@ int CustomersData::Update(int i, Customers p){
     if (maxId < p.CustomerId) maxId = p.CustomerId;
     return maxId;
 }
+
+int CustomersData::createCustomers(string CustomerName, string ContactName, string Address, string City, string PostalCode, string Country)
+{
+    Customers customer(++maxId, CustomerName, ContactName, Address, City, PostalCode, Country);
+    _data.push_back(customer);
+    return maxId;
+}
+
 
 /** @brief Function return a Customers object at a position inside the list inside CustomersData.
  *  

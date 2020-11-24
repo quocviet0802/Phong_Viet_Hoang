@@ -12,7 +12,7 @@ public:
 
     bool ShowStatisticsFollowProductID(int);
     bool ShowStatisticsFollowCategoryID(int);
-    bool ShowStatisticsFollowSupplierID(int);
+    bool ShowStatisticsFollowCustomerID(int);
 
     void ExportReport();
     void ExportManagement();

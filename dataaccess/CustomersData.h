@@ -22,5 +22,6 @@ public:
 
     //VietMQ
     vector<Customers> getCustomersDataList();
+    int createCustomers(string, string, string, string, string, string);
 };
 #endif
