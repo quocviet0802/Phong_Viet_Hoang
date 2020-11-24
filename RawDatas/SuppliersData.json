@@ -1,0 +1,30 @@
+{"Address":"49 Gilbert St.","City":"Londona","ContactName":"Charlotte Cooper","Country":"UK","Phone":"(171) 555-2222","PostalCode":"EC1 4SD","SupplierID":1,"SupplierName":"Exotic Liquid"}
+{"Address":"P.O. Box 78934","City":"New Orleans","ContactName":"Shelley Burke","Country":"USA","Phone":"(100) 555-4822","PostalCode":"70117","SupplierID":2,"SupplierName":"New Orleans Cajun Delights"}
+{"Address":"707 Oxford Rd.","City":"Ann Arbor","ContactName":"Regina Murphy","Country":"USA","Phone":"(313) 555-5735","PostalCode":"48104","SupplierID":3,"SupplierName":"Grandma Kelly's Homestead"}
+{"Address":"9-8 Sekimai Musashino-shi","City":"Tokyo","ContactName":"Yoshi Nagase","Country":"Japan","Phone":"(03) 3555-5011","PostalCode":"100","SupplierID":4,"SupplierName":"Tokyo Traders"}
+{"Address":"Calle del Rosal 4","City":"Oviedo","ContactName":"Antonio del Valle Saavedra","Country":"Spain","Phone":"(98) 598 76 54","PostalCode":"33007","SupplierID":5,"SupplierName":"Cooperativa de Quesos 'Las Cabras'"}
+{"Address":"92 Setsuko Chuo-ku","City":"Osaka","ContactName":"Mayumi Ohno","Country":"Japan","Phone":"(06) 431-7877","PostalCode":"545","SupplierID":6,"SupplierName":"Mayumi's"}
+{"Address":"74 Rose St. Moonie Ponds","City":"Melbourne","ContactName":"Ian Devling","Country":"Australia","Phone":"(03) 444-2343","PostalCode":"3058","SupplierID":7,"SupplierName":"Pavlova, Ltd."}
+{"Address":"29 King's Way","City":"Manchester","ContactName":"Peter Wilson","Country":"UK","Phone":"(161) 555-4448","PostalCode":"M14 GSD","SupplierID":8,"SupplierName":"Specialty Biscuits, Ltd."}
+{"Address":"Kaloadagatan 13","City":"Goteborg","ContactName":"Lars Peterson","Country":"Sweden","Phone":"031-987 65 43","PostalCode":"S-345 67","SupplierID":9,"SupplierName":"PB Knackebrod AB"}
+{"Address":"Av. das Americanas 12.890","City":"Sao Paulo","ContactName":"Carlos Diaz","Country":"Brazil","Phone":"(11) 555 4640","PostalCode":"5442","SupplierID":10,"SupplierName":"Refrescos Americanas LTDA"}
+{"Address":"TiergartenstraBe 5","City":"Berlin","ContactName":"Petra Winkler","Country":"Germany","Phone":"(010) 9984510","PostalCode":"10785","SupplierID":11,"SupplierName":"Heli SuBwaren GmbH & Co. KG"}
+{"Address":"Bogenallee 51","City":"Frankfurt","ContactName":"Martin Bein","Country":"Germany","Phone":"(069) 992755","PostalCode":"60439","SupplierID":12,"SupplierName":"Plutzer LebensmittelgroBmarkte AG"}
+{"Address":"Frahmredder 112a","City":"Cuxhaven","ContactName":"Sven Petersen","Country":"Germany","Phone":"(04721) 8713","PostalCode":"27478","SupplierID":13,"SupplierName":"Nord-Ost-Fisch Handelsgesellschaft mbH"}
+{"Address":"Viale Dante, 75","City":"Ravenna","ContactName":"Elio Rossi","Country":"Italy","Phone":"(0544) 60323","PostalCode":"48100","SupplierID":14,"SupplierName":"Formaggi Fortini s.r.l."}
+{"Address":"Hatlevegen 5","City":"Sandvika","ContactName":"Beate Vileid","Country":"Norway","Phone":"(0)2-953010","PostalCode":"1320","SupplierID":15,"SupplierName":"Norske Meierier"}
+{"Address":"3400 - 8th Avenue Suite 210","City":"Bend","ContactName":"Cheryl Saylor","Country":"USA","Phone":"(503) 555-9931","PostalCode":"97101","SupplierID":16,"SupplierName":"Bigfoot Breweries"}
+{"Address":"Brovallavagen 231","City":"Stockholm","ContactName":"Michael Bjorn","Country":"Sweden","Phone":"08-123 45 67","PostalCode":"S-123 45","SupplierID":17,"SupplierName":"Svensk Sjofoda AB"}
+{"Address":"203, Rue des Francs-Bourgeois","City":"Paris","ContactName":"Guylene Nodier","Country":"France","Phone":"(1) 03.83.00.68","PostalCode":"75004","SupplierID":18,"SupplierName":"Aux joyeux ecclesiastiques"}
+{"Address":"Order Processing Dept. 2100 Paul Revere Blvd.","City":"Boston","ContactName":"Robb Merchant","Country":"USA","Phone":"(617) 555-3267","PostalCode":"2134","SupplierID":19,"SupplierName":"New England Seafood Cannery"}
+{"Address":"471 Serangoon Loop, Suite #402","City":"Singapore","ContactName":"Chandra Leka","Country":"Singapore","Phone":"555-8787","PostalCode":"512","SupplierID":20,"SupplierName":"Leka Trading"}
+{"Address":"Lyngbysild Fiskebakken 10","City":"Lyngby","ContactName":"Niels Petersen","Country":"Denmark","Phone":"43844108","PostalCode":"2800","SupplierID":21,"SupplierName":"Lyngbysild"}
+{"Address":"Verkoop Rijnweg 22","City":"Zaandam","ContactName":"Dirk Luchte","Country":"Netherlands","Phone":"(12345) 1212","PostalCode":"9999 ZZ","SupplierID":22,"SupplierName":"Zaanse Snoepfabriek"}
+{"Address":"Valtakatu 12","City":"Lappeenranta","ContactName":"Anne Heikkonen","Country":"Finland","Phone":"(953) 10956","PostalCode":"53120","SupplierID":23,"SupplierName":"Karkki Oy"}
+{"Address":"170 Prince Edward Parade Hunter's Hill","City":"Sydney","ContactName":"Wendy Mackenzie","Country":"Australia","Phone":"(02) 555-5914","PostalCode":"2042","SupplierID":24,"SupplierName":"G'day, Mate"}
+{"Address":"2960 Rue St. Laurent","City":"Montreal","ContactName":"Jean-Guy Lauzon","Country":"Canada","Phone":"(514) 555-9022","PostalCode":"H1J 1C3","SupplierID":25,"SupplierName":"Ma Maison"}
+{"Address":"Via dei Gelsomini, 153","City":"Salerno","ContactName":"Giovanni Giudici","Country":"Italy","Phone":"(089) 6547665","PostalCode":"84100","SupplierID":26,"SupplierName":"Pasta Buttini s.r.l."}
+{"Address":"22, rue H. Voiron","City":"Montceau","ContactName":"Marie Delamare","Country":"France","Phone":"85.57.00.07","PostalCode":"71300","SupplierID":27,"SupplierName":"Escargots Nouveaux"}
+{"Address":"Bat. B 3, rue des Alpes","City":"Annecy","ContactName":"Eliane Noz","Country":"France","Phone":"38.76.98.06","PostalCode":"74000","SupplierID":28,"SupplierName":"Gai paturage"}
+{"Address":"148 rue Chasseur","City":"Ste-Hyacinthe","ContactName":"Chantal Goulet","Country":"Canada","Phone":"(514) 555-2955","PostalCode":"J2S 7S8","SupplierID":29,"SupplierName":"Forets d'erables"}
+{"Address":"Hoi an","City":"Hoi an","ContactName":"Phi nf","Country":"VN","Phone":"(76) 3453-221","PostalCode":"3421","SupplierID":30,"SupplierName":"Phi sd"}
