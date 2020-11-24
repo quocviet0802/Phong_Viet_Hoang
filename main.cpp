@@ -23,6 +23,7 @@
 #include "dataaccess/SuppliersData.h"
 
 #include "model/ImportManagementModel.h"
+#include "model/ExportManagementModel.h"
 
 #include "libs/json.hpp"
 
@@ -64,7 +65,9 @@ int main(int argc, char** argv) {
         }
         case 2:
         {
-            cout << "Ahihi";
+            ExportManagementModel exportModel;
+			exportModel.GetDataOrder();
+			exportModel.ExportManagement();
 			break;
         }
         case 3:

@@ -185,3 +185,21 @@ vector<OrderDetails> OrderDetailsData::getOrderDetailsList()
 {
     return OrderDetailsList;
 }
+
+
+
+/** @brief Print all OrderDetail in table
+ *  A function to print all OrderDetail in table
+ *  @author Phi Nguyen
+ */
+void OrderDetailsData::printList()
+{
+    cout << " ------------------------- Order detail table ----------------------------" << endl;
+    for (OrderDetails orderDetail : OrderDetailsList)
+    {
+        cout << orderDetail.OrderDetailID << " "
+             << orderDetail.OrderID << " "
+             << orderDetail.ProductID << " "
+             << orderDetail.Quantity << " " << endl;
+    }
+}

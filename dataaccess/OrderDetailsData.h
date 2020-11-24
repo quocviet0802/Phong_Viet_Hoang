@@ -32,4 +32,7 @@ public:
 
     vector<OrderDetails> getOrderDetailsList();
     void printAll();
+
+    // Phi
+    void printList();
 };

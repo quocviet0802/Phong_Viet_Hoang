@@ -241,3 +241,21 @@ vector<Order> OrdersData::getOrderList()
 {
     return OrderList;
 }
+
+
+/** @brief Print all Order in table
+ *  A function to print all Order in table
+ *  @author Phi Nguyen
+ */
+void OrdersData::printList()
+{
+    cout << " ------------------------- Order table ----------------------------" << endl;
+    for (Order order : OrderList)
+    {
+        cout << order.OrderID << " "
+             << order.EmployeeID << " "
+             << order.EmployeeID << " "
+             << order.OrderDate << " "
+             << order.ShipperID << " " << endl;
+    }
+}

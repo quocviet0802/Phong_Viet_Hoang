@@ -2,6 +2,7 @@
 #include <fstream>
 #include "../libs/json.hpp"
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 using json = nlohmann::json;
@@ -135,5 +136,183 @@ vector<Suppliers> SuppliersData::getSuppliersDataList(){
 }
 
 
+/** @brief Get all suppliers
+ *  A function to get all suppliers
+ *  @return vector include suppliers
+ *  @author Phi Nguyen
+ */
+vector<Suppliers> SuppliersData::GetSupplierList()
+{
+    return ListSuppliersData;
+}
+
+/** @brief Import data from CSV file
+ *  A function to import data from CSV file
+ *  @note: just run this function one time to make Json file
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool SuppliersData::ImportDataFromCSVFile()
+{
+    ifstream fin;
+    string line;
+    int pos;
+
+    // fin.open(PATH_FILE);
+    fin.open("RawDatas/SuppliersData_csv.csv");
+
+    // Open an OrderDetails Data file
+    if (!fin.is_open())
+        return false;
+
+    while (!fin.eof())
+    {
+
+        Suppliers suppliers;
+        getline(fin, line);
+        int numOfEle = 1;
+
+        do
+        {
+            pos = line.find('|');
+            string field = line.substr(0, pos);
+
+            line = line.substr(pos + 1);
+
+            switch (numOfEle)
+            {
+            case 1:
+                stringstream(field) >> suppliers.SupplierID;
+                maxId = suppliers.SupplierID < maxId ? maxId : suppliers.SupplierID;
+                numOfEle++;
+                break;
+            case 2:
+                suppliers.SupplierName = field;
+                numOfEle++;
+                break;
+
+            case 3:
+                suppliers.ContactName = field;
+                numOfEle++;
+                break;
+            case 4:
+                suppliers.Address = field;
+                numOfEle++;
+                break;
+            case 5:
+                suppliers.City = field;
+                numOfEle++;
+                break;
+            case 6:
+                suppliers.PostalCode = field;
+                numOfEle++;
+                break;
+            case 7:
+                suppliers.Country = field;
+                numOfEle++;
+                break;
+            case 8:
+                suppliers.Phone = field;
+                numOfEle++;
+                break;
+            default:
+                break;
+            }
+        } while (pos >= 0);
+
+        ListSuppliersData.push_back(suppliers);
+    }
+
+    fin.close();
+
+    return true;
+}
+
+/** @brief check ID is valided
+ *  A function to check ID is valided
+ *  @param supplierID(int)
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool SuppliersData::isIDValided(int supplierID)
+{
+    for (int i = 0; i < ListSuppliersData.size(); i++)
+    {
+        if (ListSuppliersData[i].SupplierID == supplierID)
+            return true;
+    }
+    return false;
+}
+
+/** @brief update supplier info by ID
+ *  A function to update supplier info by ID
+ *  @param 
+ *        supplierID(int)
+ *        supplier(Suppliers)
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool SuppliersData::updateSupplierByID(int supplierID, Suppliers supplier)
+{
+    /* if (supplierID < 0)
+        return false;
+    else if (supplierID > maxId)
+        return false; */
+
+    for (int i = 0; i < ListSuppliersData.size(); i++)
+    {
+        if (ListSuppliersData[i].SupplierID == supplierID)
+        {
+            ListSuppliersData[i].SupplierName = supplier.SupplierName;
+            ListSuppliersData[i].ContactName = supplier.ContactName;
+            ListSuppliersData[i].City = supplier.City;
+            ListSuppliersData[i].Address = supplier.Address;
+            ListSuppliersData[i].Country = supplier.Country;
+            ListSuppliersData[i].PostalCode = supplier.PostalCode;
+            ListSuppliersData[i].Phone = supplier.Phone;
+            return true;
+        }
+    }
+    return false;
+}
+
+/** @brief delete supplier info by ID
+ *  A function to delete supplier info by ID
+ *  @param 
+ *        supplierID(int)
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool SuppliersData::deleteSupplierByID(int supplierID)
+{
+    /* if (supplierID < 0)
+        return false;
+    else if (supplierID > maxId)
+        return false; */
+    for (int i = 0; i < ListSuppliersData.size(); i++)
+    {
+        if (ListSuppliersData[i].SupplierID == supplierID)
+        {
+            ListSuppliersData.erase(ListSuppliersData.begin() + i);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+/** @brief Print all supplier in table
+ *  A function to print all supplier in table
+ *  @author Phi Nguyen
+ */
+void SuppliersData::printList()
+{
+    cout << " ------------------------- Supplier table ----------------------------" << endl;
+    for (Suppliers supplier : ListSuppliersData)
+    {
+        cout << supplier.ToString() << endl;
+    }
+}
 
 

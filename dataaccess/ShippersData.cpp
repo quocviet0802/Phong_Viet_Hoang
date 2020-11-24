@@ -130,5 +130,16 @@ vector<Shippers> ShippersData::getShippersDataList(){
 }
 
 
-
+/** @brief Print all shipper in table
+ *  A function to print all shipper in table
+ *  @author Phi Nguyen
+ */
+void ShippersData::printList()
+{
+    cout << " ------------------------- Shippers table ----------------------------" << endl;
+    for (Shippers shipper : ListShippersData)
+    {
+        cout << shipper.ToString() << endl;
+    }
+}
 

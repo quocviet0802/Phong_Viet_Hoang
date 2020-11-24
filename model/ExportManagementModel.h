@@ -9,12 +9,13 @@ class ExportManagementModel: public WarehouseManagementModel{
 public:
     ExportManagementModel();
     ~ExportManagementModel();
-    void ExportReport();
 
     bool ShowStatisticsFollowProductID(int);
-    bool ShowStatisticsFollowCategoryName(string);
-    bool ShowStatisticsFollowSupplierName(string);
+    bool ShowStatisticsFollowCategoryID(int);
+    bool ShowStatisticsFollowSupplierID(int);
 
+    void ExportReport();
+    void ExportManagement();
 };
 
 

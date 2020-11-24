@@ -54,6 +54,7 @@ public:
     bool CheckInTime(string, string , string);
     int TimeCompare(tm, tm);
 
+    void InputDataToDB();
     virtual void ExportReport();  
 };
 

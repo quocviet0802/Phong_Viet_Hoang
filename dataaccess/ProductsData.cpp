@@ -255,3 +255,22 @@ vector<Product> ProductsData::getProductList()
 {
     return ProductList;
 }
+
+
+/** @brief Print all product in table
+ *  A function to print all product in table
+ *  @author Phi Nguyen
+ */
+void ProductsData::printList()
+{
+    cout << " ------------------------- Product table ----------------------------" << endl;
+    for (Product product : ProductList)
+    {
+        cout << product.ProductID << " "
+             << product.ProductName << " "
+             << product.SupplierID << " "
+             << product.CategoryID << " "
+             << product.Unit << " "
+             << product.Price << endl;
+    }
+}

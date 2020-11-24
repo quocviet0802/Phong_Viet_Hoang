@@ -7,6 +7,19 @@
 using namespace std;
 using json = nlohmann::json;
 
+//[PHI] - make it clearly
+enum class SUPPLIER_PROPS
+{
+    ID,
+    NAME,
+    CONTACT_NAME,
+    ADDRESS,
+    CITY,
+    POSTAL_CODE,
+    COUNTRY,
+    PHONE
+};
+
 class Suppliers{
 public:
     int SupplierID;

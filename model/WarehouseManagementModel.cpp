@@ -22,7 +22,7 @@ void WarehouseManagementModel::ExportReport(){
 void WarehouseManagementModel::GetDataOrder(){
 
     CategoriesData datacategories("RawDatas/Categories.txt");
-    DataCategories = datacategories.getCategoriesDataList();
+    DataCategories = datacategories.GetCategoryList();
 
     CustomersData customers("RawDatas/Customers.txt");
     DataCustomers = customers.getCustomersDataList();
@@ -197,3 +197,59 @@ bool WarehouseManagementModel::CheckInTime(string time_start, string time_end, s
         return (compare_start <= 0 && compare_end <= 0) ? true :  false;
     }
 }
+
+
+
+void WarehouseManagementModel::InputDataToDB(){
+    system("CLS");
+    cout << "Nhap thong tin order" << endl;
+
+    cout << "Nhap Customer ID :";
+    int customer_id;
+    cin >> customer_id;
+
+    cout << "Nhap Employee ID :";
+    int employee_id;
+    cin >> employee_id;
+
+    cout << "Nhap order date (DD/MM/YYYY): ";
+    string order_date;
+    cin.clear();
+    fflush(stdin);
+    getline(cin, order_date);
+
+    cout << "Nhap shipper ID :";
+    int shipper_id;
+    cin >> shipper_id;
+
+    OrdersData oders;
+    oders.importDataFromJsonFile();
+    int order_id = oders.createOrder(customer_id, employee_id, order_date, shipper_id);
+    oders.exportDataToFile();
+
+    char check;
+    do{
+
+        system("CLS");
+        cout << endl;
+        cout << "Nhap thong tin cac product cua order" << endl;
+
+        int product_id;
+        cout << "Nhap Product ID: ";
+        cin >> product_id;
+        cout << "Nhap  Quanlity: ";
+        int quanlity;
+        cin >> quanlity;
+
+        OrderDetailsData odersdetails;
+        odersdetails.importDataFromJsonFile();
+        odersdetails.createOrderDetail(order_id, product_id, quanlity);
+        odersdetails.exportDataToFile();
+
+        cout << "nhap tiep [Y/N] :";
+        cin >> check;
+
+    }while(check == 'Y' || check == 'y');
+
+}
+

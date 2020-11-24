@@ -17,7 +17,10 @@ public:
     int GetSize();
     int ExportToFile(string);
 
-    vector<Customers> getCustomersDataList();
+    //[PHI]
+    void printList();
 
+    //VietMQ
+    vector<Customers> getCustomersDataList();
 };
 #endif
