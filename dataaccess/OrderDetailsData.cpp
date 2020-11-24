@@ -1,6 +1,5 @@
 #include "OrderDetailsData.h"
 
-
 OrderDetailsData *OrderDetailsData::instance = NULL;
 OrderDetailsData::OrderDetailsData()
 {
@@ -93,15 +92,14 @@ bool OrderDetailsData::importDataFromJsonFile()
     while (inFile.getline(buff, maxSize))
     {
         json jObject = json::parse(buff);
-        int OrderDetailID = 0,OrderID,ProductID,Quantity;
+        int OrderDetailID = 0, OrderID, ProductID, Quantity;
 
         stringstream(jObject["OrderID"].dump()) >> OrderID;
         stringstream(jObject["ProductID"].dump()) >> ProductID;
         stringstream(jObject["Quantity"].dump()) >> Quantity;
         stringstream(jObject["OrderDetailID"].dump()) >> OrderDetailID;
 
-
-        OrderDetails orderDetail(OrderDetailID, OrderID,ProductID,Quantity);
+        OrderDetails orderDetail(OrderDetailID, OrderID, ProductID, Quantity);
         maxID = OrderDetailID < maxID ? maxID : OrderDetailID;
         OrderDetailsList.push_back(orderDetail);
     }
@@ -137,14 +135,14 @@ OrderDetails *OrderDetailsData::getOrderDetailsByID(int OrderDetailID)
     return orderDetail;
 }
 
-int OrderDetailsData::createOrderDetail(int OrderID,int ProductID,int Quantity)
+int OrderDetailsData::createOrderDetail(int OrderID, int ProductID, int Quantity)
 {
-    OrderDetails orderDetail(++maxID, OrderID, ProductID,Quantity);
+    OrderDetails orderDetail(++maxID, OrderID, ProductID, Quantity);
     OrderDetailsList.push_back(orderDetail);
     return maxID;
 }
 
-bool OrderDetailsData::updateOrderDetail(int OrderDetailID,int OrderID,int ProductID,int Quantity)
+bool OrderDetailsData::updateOrderDetail(int OrderDetailID, int OrderID, int ProductID, int Quantity)
 {
     for (int i = 0; i < OrderDetailsList.size(); i++)
     {
@@ -177,11 +175,27 @@ void OrderDetailsData::printAll()
     cout << "OrderDetail list" << endl;
     for (OrderDetails orderDetail : OrderDetailsList)
     {
-        cout << "{" << orderDetail.OrderDetailID << " , " << orderDetail.OrderID << " , " << orderDetail.ProductID << " , " << orderDetail.Quantity <<endl;
+        cout << "{" << orderDetail.OrderDetailID << " , " << orderDetail.OrderID << " , " << orderDetail.ProductID << " , " << orderDetail.Quantity << endl;
     }
 }
 
 vector<OrderDetails> OrderDetailsData::getOrderDetailsList()
 {
     return OrderDetailsList;
+}
+
+/** @brief Print all OrderDetail in table
+ *  A function to print all OrderDetail in table
+ *  @author Phi Nguyen
+ */
+void OrderDetailsData::printList()
+{
+    cout << " ------------------------- Order detail table ----------------------------" << endl;
+    for (OrderDetails orderDetail : OrderDetailsList)
+    {
+        cout << orderDetail.OrderDetailID << " "
+             << orderDetail.OrderID << " "
+             << orderDetail.ProductID << " "
+             << orderDetail.Quantity << " " << endl;
+    }
 }

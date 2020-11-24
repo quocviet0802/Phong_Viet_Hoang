@@ -2,6 +2,8 @@
 #define _Employees_Data_h
 #include <vector>
 #include "../businessobjects/Employees.h"
+#include<iostream>
+using namespace std;
 
 class EmployeesData{
 public:
@@ -16,5 +18,8 @@ public:
     Employees Get(int);
     int GetSize();
     int ExportToFile(string);
+
+    //[PHI]
+    void printList();
 };
 #endif

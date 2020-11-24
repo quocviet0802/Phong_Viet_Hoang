@@ -8,7 +8,8 @@
 #include "CustomersData.h"
 #include <fstream>
 #include "../libs/json.hpp"
-
+#include<iostream>
+using namespace std;
 using json = nlohmann::json;
 
 CustomersData::CustomersData(){
@@ -100,4 +101,16 @@ int CustomersData::ExportToFile(string filename){
     }
     outFile.close();
     return 1;
+}
+
+/** @brief Print all Customer in table
+ *  A function to print all Customer in table
+ *  @author Phi Nguyen
+ */
+void CustomersData::printList()
+{
+    cout << " ------------------------- Customer table ----------------------------" << endl;
+    for (Customers p:_data){
+        cout << p.ToString() << endl;
+    }
 }

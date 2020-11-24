@@ -8,7 +8,7 @@ OrdersData::OrdersData()
 /** @brief Singleton function
 *   Function returns ifsefl
 *   @return instance of OrdersData
-*/ 
+*/
 OrdersData *OrdersData::getInstance()
 {
     if (instance == NULL)
@@ -22,12 +22,11 @@ OrdersData::~OrdersData()
 {
 }
 
-
 /** @brief Import data from CSV file to OrderDataList
 *   Function import data from CSV file to OrderDataList
 *   @return true: import success
 *           false: import failed
-*/ 
+*/
 bool OrdersData::importDataFromCSVFile()
 {
     ifstream fin;
@@ -37,8 +36,7 @@ bool OrdersData::importDataFromCSVFile()
     // Open an Order Data file
     // fin.open(PATH_FILE);
     fin.open("RawDatas/OrdersData_csv.csv");
-    
-    
+
     if (!fin.is_open())
         return false;
 
@@ -51,7 +49,7 @@ bool OrdersData::importDataFromCSVFile()
         getline(fin, line);
 
         //Postion of elements
-        int numOfEle = 1; 
+        int numOfEle = 1;
 
         do
         {
@@ -105,7 +103,7 @@ bool OrdersData::importDataFromCSVFile()
 *   Function import data from Json file to OrderDataList
 *   @return true: import success
 *           false: import failed
-*/ 
+*/
 bool OrdersData::importDataFromJsonFile()
 {
     maxID = 0;
@@ -124,7 +122,7 @@ bool OrdersData::importDataFromJsonFile()
     {
         // parsing to json object
         json jObject = json::parse(buff);
-        int OrderID,CustomerID,EmployeeID,ShipperID;
+        int OrderID, CustomerID, EmployeeID, ShipperID;
 
         stringstream(jObject["OrderID"].dump()) >> OrderID;
         stringstream(jObject["CustomerID"].dump()) >> CustomerID;
@@ -143,7 +141,7 @@ bool OrdersData::importDataFromJsonFile()
 *   Function export data from OrderList to Json file
 *   @return true: export success
 *           false: export failed
-*/ 
+*/
 bool OrdersData::exportDataToFile()
 {
     ofstream outFile;
@@ -168,7 +166,7 @@ bool OrdersData::exportDataToFile()
 *      OrderID: id of order
 *   @return pointer Order if found
 *           nullptr if cannot found
-*/ 
+*/
 Order *OrdersData::getOrderByID(int orderID)
 {
     Order *order = nullptr;
@@ -190,7 +188,7 @@ Order *OrdersData::getOrderByID(int orderID)
 *      OrderID: id of order
 *   @return pointer Order if found
 *           nullptr if cannot found
-*/ 
+*/
 int OrdersData::createOrder(int CustomerID, int EmployeeID, string OrderDate, int ShipperID)
 {
     Order order(++maxID, CustomerID, EmployeeID, OrderDate, ShipperID);
@@ -240,4 +238,21 @@ void OrdersData::printAll()
 vector<Order> OrdersData::getOrderList()
 {
     return OrderList;
+}
+
+/** @brief Print all Order in table
+ *  A function to print all Order in table
+ *  @author Phi Nguyen
+ */
+void OrdersData::printList()
+{
+    cout << " ------------------------- Order table ----------------------------" << endl;
+    for (Order order : OrderList)
+    {
+        cout << order.OrderID << " "
+             << order.EmployeeID << " "
+             << order.EmployeeID << " "
+             << order.OrderDate << " "
+             << order.ShipperID << " " << endl;
+    }
 }

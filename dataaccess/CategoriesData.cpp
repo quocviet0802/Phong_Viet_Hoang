@@ -29,6 +29,7 @@ CategoriesData::CategoriesData(string filename){
             j["CategoryName"],
             j["Description"]
         );
+        maxId = maxId < p.CategoryId? p.CategoryId: maxId;
         _data.push_back(p);
     }
     inFile.close();
@@ -96,4 +97,94 @@ int CategoriesData::ExportToFile(string filename){
     }
     outFile.close();
     return 1;
+}
+
+/** @brief Get all Categories
+ *  A function to get all Categories
+ *  @return vector include Categories
+ *  @author Phi Nguyen
+ */
+vector<Categories> CategoriesData::GetCategoryList()
+{
+    return _data;
+}
+
+/** @brief check ID is valided
+ *  A function to check ID is valided
+ *  @param CategoryID(int)
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool CategoriesData::isIDValided(int CategoryID)
+{
+    for (int i = 0; i < _data.size(); i++)
+    {
+        if (_data[i].CategoryId == CategoryID)
+            return true;
+    }
+    return false;
+}
+
+/** @brief update Category info by ID
+ *  A function to update Category info by ID
+ *  @param 
+ *        CategoryID(int)
+ *        Category(Categories)
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool CategoriesData::updateCategoryByID(int CategoryID, Categories Category)
+{
+    /* if (CategoryID < 0)
+        return false;
+    else if (CategoryID > maxId)
+        return false; */
+
+    for (int i = 0; i < _data.size(); i++)
+    {
+        if (_data[i].CategoryId == CategoryID)
+        {
+            _data[i].CategoryName = Category.CategoryName;
+            _data[i].Description = Category.Description;
+            return true;
+        }
+    }
+    return false;
+}
+
+/** @brief delete Category info by ID
+ *  A function to delete Category info by ID
+ *  @param 
+ *        CategoryID(int)
+ *  @return true: success | false: failed
+ *  @author Phi Nguyen
+ */
+bool CategoriesData::deleteCategoryByID(int CategoryID)
+{
+    /* if (CategoryID < 0)
+        return false;
+    else if (CategoryID > maxId)
+        return false; */
+    for (int i = 0; i < _data.size(); i++)
+    {
+        if (_data[i].CategoryId == CategoryID)
+        {
+            _data.erase(_data.begin() + i);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/** @brief Print all Category in table
+ *  A function to print all Category in table
+ *  @author Phi Nguyen
+ */
+void CategoriesData::printList()
+{
+    cout << " ------------------------- Category table ----------------------------" << endl;
+    for (Categories p:_data){
+        cout << p.ToString() << endl;
+    }
 }

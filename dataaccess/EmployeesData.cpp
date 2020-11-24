@@ -100,3 +100,15 @@ int EmployeesData::ExportToFile(string filename){
     outFile.close();
     return 1;
 }
+
+/** @brief Print all Employees in table
+ *  A function to print all Employees in table
+ *  @author Phi Nguyen
+ */
+void EmployeesData::printList()
+{
+    cout << " ------------------------- Employees table ----------------------------" << endl;
+    for (Employees p:_data){
+        cout << p.ToString() << endl;
+    }
+}

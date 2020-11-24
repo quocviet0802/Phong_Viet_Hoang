@@ -2,6 +2,8 @@
 #define _Categories_Data_h
 #include <vector>
 #include "../businessobjects/Categories.h"
+#include<iostream>
+using namespace std;
 
 class CategoriesData{
 public:
@@ -16,5 +18,13 @@ public:
     Categories Get(int);
     int GetSize();
     int ExportToFile(string);
+
+
+    //[PHI]
+    vector<Categories> GetCategoryList();
+    bool isIDValided(int CategoryID);
+    bool updateCategoryByID(int CategoryID,Categories Category);
+    bool deleteCategoryByID(int CategoryID);
+    void printList();
 };
 #endif

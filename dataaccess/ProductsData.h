@@ -39,4 +39,5 @@ public:
     vector<Product> getProductList();
 
     void printAll();
+    void printList();
 };

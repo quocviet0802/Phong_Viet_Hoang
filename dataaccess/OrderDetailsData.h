@@ -32,4 +32,5 @@ public:
 
     vector<OrderDetails> getOrderDetailsList();
     void printAll();
+    void printList();
 };

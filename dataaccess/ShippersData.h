@@ -25,5 +25,8 @@ public:
     int GetSize();
     int ExportToFile(string);
     friend class ImportManagementModel;
+
+    //[PHI]
+    void printList();
 };
 #endif

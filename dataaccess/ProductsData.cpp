@@ -8,7 +8,7 @@ ProductsData::ProductsData()
 /** @brief Singleton function
 *   Function returns ifsefl
 *   @return instance of ProductsData
-*/ 
+*/
 ProductsData *ProductsData::getInstance()
 {
     if (instance == NULL)
@@ -22,12 +22,11 @@ ProductsData::~ProductsData()
 {
 }
 
-
 /** @brief Import data from CSV file to ProductList
 *   Function import data from CSV file to ProductList
 *   @return true: import success
 *           false: import failed
-*/ 
+*/
 bool ProductsData::importDataFromCSVFile()
 {
     ifstream fin;
@@ -37,8 +36,7 @@ bool ProductsData::importDataFromCSVFile()
     // Open an Product Data file
     // fin.open(PATH_FILE);
     fin.open("RawDatas/ProductsData_csv.csv");
-    
-    
+
     if (!fin.is_open())
         return false;
 
@@ -51,7 +49,7 @@ bool ProductsData::importDataFromCSVFile()
         getline(fin, line);
 
         //Postion of elements
-        int numOfEle = 1; 
+        int numOfEle = 1;
 
         do
         {
@@ -62,7 +60,7 @@ bool ProductsData::importDataFromCSVFile()
             //erase string has been retrieved from line
             line = line.substr(pos + 1);
 
-            cout<<"field : "<<field<<endl;
+            cout << "field : " << field << endl;
             switch (numOfEle)
             {
             case 1: //First element
@@ -110,7 +108,7 @@ bool ProductsData::importDataFromCSVFile()
 *   Function import data from Json file to ProductList
 *   @return true: import success
 *           false: import failed
-*/ 
+*/
 bool ProductsData::importDataFromJsonFile()
 {
     maxID = 0;
@@ -129,7 +127,7 @@ bool ProductsData::importDataFromJsonFile()
     {
         // parsing to json object
         json jObject = json::parse(buff);
-        int ProductID,SupplierID,CategoryID,Price;
+        int ProductID, SupplierID, CategoryID, Price;
 
         stringstream(jObject["ProductID"].dump()) >> ProductID;
         stringstream(jObject["SupplierID"].dump()) >> SupplierID;
@@ -137,7 +135,7 @@ bool ProductsData::importDataFromJsonFile()
         stringstream(jObject["Price"].dump()) >> Price;
 
         //Create a Product with infomations from json object
-        Product Product(ProductID, jObject["ProductName"].dump(), SupplierID, CategoryID, jObject["Unit"].dump(),Price);
+        Product Product(ProductID, jObject["ProductName"].dump(), SupplierID, CategoryID, jObject["Unit"].dump(), Price);
         maxID = ProductID < maxID ? maxID : ProductID;
         ProductList.push_back(Product);
     }
@@ -148,7 +146,7 @@ bool ProductsData::importDataFromJsonFile()
 *   Function export data from ProductList to Json file
 *   @return true: export success
 *           false: export failed
-*/ 
+*/
 bool ProductsData::exportDataToFile()
 {
     ofstream outFile;
@@ -173,7 +171,7 @@ bool ProductsData::exportDataToFile()
 *      ProductID: id of Product
 *   @return pointer Product if found
 *           nullptr if cannot found
-*/ 
+*/
 Product *ProductsData::getProductByID(int ProductID)
 {
     Product *Product = nullptr;
@@ -195,10 +193,10 @@ Product *ProductsData::getProductByID(int ProductID)
 *      ProductID:(int) id of Product
 *   @return pointer Product if found
 *           nullptr if cannot found
-*/ 
-int ProductsData::createProduct(string ProductName,int SupplierID,int CategoryID,string Unit,double Price)
+*/
+int ProductsData::createProduct(string ProductName, int SupplierID, int CategoryID, string Unit, double Price)
 {
-    Product Product(++maxID, ProductName, SupplierID, CategoryID, Unit,Price);
+    Product Product(++maxID, ProductName, SupplierID, CategoryID, Unit, Price);
     ProductList.push_back(Product);
     return maxID;
 }
@@ -210,7 +208,7 @@ int ProductsData::createProduct(string ProductName,int SupplierID,int CategoryID
 *   @return pointer Product if found
 *           nullptr if cannot found
 */
-bool ProductsData::updateProduct(int ProductID,string ProductName,int SupplierID,int CategoryID,string Unit,double Price)
+bool ProductsData::updateProduct(int ProductID, string ProductName, int SupplierID, int CategoryID, string Unit, double Price)
 {
     for (int i = 0; i < ProductList.size(); i++)
     {
@@ -228,6 +226,14 @@ bool ProductsData::updateProduct(int ProductID,string ProductName,int SupplierID
     return false;
 }
 
+
+/** @brief Delete a product
+*   Function to delete a product
+*   @param 
+*      ProductID:(int) id of Product
+*   @return true: success
+*           false: failed
+*/
 bool ProductsData::deleteProduct(int ProductID)
 {
     for (int i = 0; i < ProductList.size(); i++)
@@ -246,12 +252,35 @@ void ProductsData::printAll()
     cout << "Product list" << endl;
     for (Product Product : ProductList)
     {
-        cout << "{" << Product.ProductID << " , " << Product.ProductName << " , " 
-        << Product.SupplierID << " , " << Product.CategoryID << " , " << Product.Unit << " , " << Product.Price<< endl;
+        cout << "{" << Product.ProductID << " , " << Product.ProductName << " , "
+             << Product.SupplierID << " , " << Product.CategoryID << " , " << Product.Unit << " , " << Product.Price << endl;
     }
 }
 
+
+/** @brief get a product list
+*   Function to get a product list
+*   @return ProductList(vector)
+*/
 vector<Product> ProductsData::getProductList()
 {
     return ProductList;
+}
+
+/** @brief Print all product in table
+ *  A function to print all product in table
+ *  @author Phi Nguyen
+ */
+void ProductsData::printList()
+{
+    cout << " ------------------------- Product table ----------------------------" << endl;
+    for (Product product : ProductList)
+    {
+        cout << product.ProductID << " "
+             << product.ProductName << " "
+             << product.SupplierID << " "
+             << product.CategoryID << " "
+             << product.Unit << " "
+             << product.Price << endl;
+    }
 }

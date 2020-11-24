@@ -2,6 +2,7 @@
 #define _Suppliers_Data_h
 #include <vector>
 #include <string>
+#include<sstream>
 #include "../businessobjects/Suppliers.h"
 
 class SuppliersData{
@@ -26,5 +27,13 @@ public:
     int ExportToFile(string);
     
     friend class ImportManagementModel;
+
+    //[PHI]
+    vector<Suppliers> GetSupplierList();
+    bool ImportDataFromCSVFile();
+    bool isIDValided(int supplierID);
+    bool updateSupplierByID(int supplierID,Suppliers supplier);
+    bool deleteSupplierByID(int supplierID);
+    void printList();
 };
 #endif
