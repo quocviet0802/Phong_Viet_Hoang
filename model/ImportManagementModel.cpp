@@ -16,6 +16,12 @@ ImportManagementModel::~ImportManagementModel(){
 
 }
 
+
+/** @brief Show data of Statistics table with product id
+ *  A function to Show data of Statistics table with product id
+ *  @return true if success, false if fail
+ *  @author VietmQ
+ */
 bool ImportManagementModel::ShowStatisticsFollowProductID(int id){
     bool FlagCheck = false;
 
@@ -36,6 +42,11 @@ bool ImportManagementModel::ShowStatisticsFollowProductID(int id){
 }
 
 
+/** @brief Show data of Statistics table with category id
+ *  A function to Show data of Statistics table with category id
+ *  @return true if success, false if fail
+ *  @author VietmQ
+ */
 bool ImportManagementModel::ShowStatisticsFollowCategoryID(int id){
     bool FlagCheck = false;
 
@@ -60,6 +71,11 @@ bool ImportManagementModel::ShowStatisticsFollowCategoryID(int id){
 }
 
 
+/** @brief Show data of Statistics table with supplier id
+ *  A function to Show data of Statistics table with supplier id
+ *  @return true if success, false if fail
+ *  @author VietmQ
+ */
 bool ImportManagementModel::ShowStatisticsFollowSupplierID(int id){
     bool FlagCheck = false;
 
@@ -84,6 +100,10 @@ bool ImportManagementModel::ShowStatisticsFollowSupplierID(int id){
 }
 
 
+/** @brief show import management
+ *  A function to Show option and call function import management
+ *  @author VietmQ
+ */
 void ImportManagementModel::ImportManagement(){
     do
     {
@@ -117,7 +137,10 @@ void ImportManagementModel::ImportManagement(){
 }
     
 
-
+/** @brief import management
+ *  A function to Show option and call function print report
+ *  @author VietmQ
+ */
 void ImportManagementModel::ExportReport(){
 
     system("CLS");

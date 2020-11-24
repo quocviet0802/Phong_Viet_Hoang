@@ -16,6 +16,14 @@ Suppliers::Suppliers(int SupplierID, string SupplierName, string ContactName, st
     this->Phone = Phone;
 }
 
+
+/** @brief Function converts this object to string.
+ *  
+ *  Function converts this object to string 
+ *  *  @return a string;
+ *  Example: Suppliers p(2, "Pepsi", "Charlotte", 49 Gilber, "Londona", "EC1 4SD", "UK", "(171) 555-2222")
+ *       -> {"SupplierID":2,"SupplierName":"Pepsi","ContactName":"Charlotte","Address":"49 Gilber","City":"Londona","PostalCode":"EC1 4SD","Country":"UK", "Phone":"(171) 555-2222"}
+ */
 string Suppliers::ToString(){
     string s;
     s += "{";
@@ -31,6 +39,14 @@ string Suppliers::ToString(){
     return s;
 }
 
+
+/** @brief Function converts this object to json object.
+ *  
+ *  Function converts this object to json object.
+ *  @return a json object;
+ *  Example: Suppliers p(2, "Pepsi", "Charlotte", 49 Gilber, "Londona", "EC1 4SD", "UK", "(171) 555-2222")
+ *       -> {"SupplierID":2,"SupplierName":"Pepsi","ContactName":"Charlotte","Address":"49 Gilber","City":"Londona","PostalCode":"EC1 4SD","Country":"UK", "Phone":"(171) 555-2222"}
+ */
 json Suppliers::ToJson(){
     json j;
     j["SupplierID"] = SupplierID;
