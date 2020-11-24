@@ -128,18 +128,24 @@ bool ProductsData::importDataFromJsonFile()
     while (inFile.getline(buff, maxSize))
     {
         // parsing to json object
-        json jObject = json::parse(buff);
-        int ProductID,SupplierID,CategoryID,Price;
+        json j = json::parse(buff);
+        
+        Product product(
+            j["ProductID"],
+            j["ProductName"],
+            j["SupplierID"],
+            j["CategoryID"],
+            j["Unit"],
+            j["Price"]
+        );
 
-        stringstream(jObject["ProductID"].dump()) >> ProductID;
-        stringstream(jObject["SupplierID"].dump()) >> SupplierID;
-        stringstream(jObject["CategoryID"].dump()) >> CategoryID;
-        stringstream(jObject["Price"].dump()) >> Price;
+        int ProductID;
+
+        stringstream(j["ProductID"].dump()) >> ProductID;
 
         //Create a Product with infomations from json object
-        Product Product(ProductID, jObject["ProductName"].dump(), SupplierID, CategoryID, jObject["Unit"].dump(),Price);
         maxID = ProductID < maxID ? maxID : ProductID;
-        ProductList.push_back(Product);
+        ProductList.push_back(product);
     }
     return true;
 }
@@ -264,13 +270,31 @@ vector<Product> ProductsData::getProductList()
 void ProductsData::printList()
 {
     cout << " ------------------------- Product table ----------------------------" << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(50);
+    cout << "ProductName" << left;
+    cout.width(20);
+    cout << "SupplierID" << left;
+    cout.width(20);
+    cout << "CategoryID" << left;
+    cout.width(30);
+    cout << "Unit" << left;
+    cout.width(10);
+    cout << "Price" << left << endl;
     for (Product product : ProductList)
     {
-        cout << product.ProductID << " "
-             << product.ProductName << " "
-             << product.SupplierID << " "
-             << product.CategoryID << " "
-             << product.Unit << " "
-             << product.Price << endl;
+        cout.width(3);
+        cout << product.ProductID << left;
+        cout.width(50);
+        cout << product.ProductName << left;
+        cout.width(20);
+        cout << product.SupplierID << left;
+        cout.width(20);
+        cout << product.CategoryID << left;
+        cout.width(30);
+        cout << product.Unit << left;
+        cout.width(10);
+        cout << product.Price << left << endl;
     }
 }

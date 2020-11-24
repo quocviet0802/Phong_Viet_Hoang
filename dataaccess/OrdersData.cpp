@@ -123,16 +123,19 @@ bool OrdersData::importDataFromJsonFile()
     while (inFile.getline(buff, maxSize))
     {
         // parsing to json object
-        json jObject = json::parse(buff);
-        int OrderID,CustomerID,EmployeeID,ShipperID;
 
-        stringstream(jObject["OrderID"].dump()) >> OrderID;
-        stringstream(jObject["CustomerID"].dump()) >> CustomerID;
-        stringstream(jObject["EmployeeID"].dump()) >> EmployeeID;
-        stringstream(jObject["ShipperID"].dump()) >> ShipperID;
+        json j = json::parse(buff);
+        Order order(
+            j["OrderID"],
+            j["CustomerID"],
+            j["EmployeeID"],
+            j["OrderDate"],
+            j["ShipperID"]
+        );
 
-        //Create a order with infomations from json object
-        Order order(OrderID, CustomerID, EmployeeID, jObject["OrderDate"].dump(), ShipperID);
+        int OrderID;
+        stringstream(j["OrderID"].dump()) >> OrderID;
+
         maxID = OrderID < maxID ? maxID : OrderID;
         OrderList.push_back(order);
     }
@@ -250,12 +253,27 @@ vector<Order> OrdersData::getOrderList()
 void OrdersData::printList()
 {
     cout << " ------------------------- Order table ----------------------------" << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(15);
+    cout << "CustomerID" << left;
+    cout.width(15);
+    cout << "EmployeeID" << left;
+    cout.width(20);
+    cout << "OrderDate" << left;
+    cout.width(15);
+    cout << "ShipperID" << left << endl;
     for (Order order : OrderList)
     {
-        cout << order.OrderID << " "
-             << order.EmployeeID << " "
-             << order.EmployeeID << " "
-             << order.OrderDate << " "
-             << order.ShipperID << " " << endl;
+        cout.width(3);
+        cout << order.OrderID << left;
+        cout.width(15);
+        cout << order.CustomerID << left;
+        cout.width(15);
+        cout << order.EmployeeID << left;
+        cout.width(20);
+        cout << order.OrderDate << left;
+        cout.width(15);
+        cout << order.ShipperID << left << endl;
     }
 }

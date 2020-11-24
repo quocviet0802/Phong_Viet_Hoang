@@ -92,16 +92,17 @@ bool OrderDetailsData::importDataFromJsonFile()
 
     while (inFile.getline(buff, maxSize))
     {
-        json jObject = json::parse(buff);
-        int OrderDetailID = 0,OrderID,ProductID,Quantity;
+        json j = json::parse(buff);
+        OrderDetails orderDetail(
+            j["OrderDetailID"],
+            j["OrderID"],
+            j["ProductID"],
+            j["Quantity"]
+        );
 
-        stringstream(jObject["OrderID"].dump()) >> OrderID;
-        stringstream(jObject["ProductID"].dump()) >> ProductID;
-        stringstream(jObject["Quantity"].dump()) >> Quantity;
-        stringstream(jObject["OrderDetailID"].dump()) >> OrderDetailID;
-
-
-        OrderDetails orderDetail(OrderDetailID, OrderID,ProductID,Quantity);
+        int OrderDetailID;
+        stringstream(j["OrderDetailID"].dump()) >> OrderDetailID;
+        
         maxID = OrderDetailID < maxID ? maxID : OrderDetailID;
         OrderDetailsList.push_back(orderDetail);
     }
@@ -195,11 +196,23 @@ vector<OrderDetails> OrderDetailsData::getOrderDetailsList()
 void OrderDetailsData::printList()
 {
     cout << " ------------------------- Order detail table ----------------------------" << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(15);
+    cout << "OrderID" << left;
+    cout.width(15);
+    cout << "ProductID" << left;
+    cout.width(20);
+    cout << "Quantity" << left << endl;
     for (OrderDetails orderDetail : OrderDetailsList)
     {
-        cout << orderDetail.OrderDetailID << " "
-             << orderDetail.OrderID << " "
-             << orderDetail.ProductID << " "
-             << orderDetail.Quantity << " " << endl;
+        cout.width(3);
+        cout << orderDetail.OrderDetailID << left;
+        cout.width(15);
+        cout << orderDetail.OrderID << left;
+        cout.width(15);
+        cout << orderDetail.ProductID << left;
+        cout.width(20);
+        cout << orderDetail.Quantity << left << endl;
     }
 }

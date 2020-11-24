@@ -164,9 +164,20 @@ vector<Shippers> ShippersData::getShippersDataList(){
 void ShippersData::printList()
 {
     cout << " ------------------------- Shippers table ----------------------------" << endl;
+    cout.width(3);
+    cout << "ShipperID" << left;
+    cout.width(40);
+    cout << "ShipperName" << left;
+    cout.width(40);
+    cout << "Phone" << left << endl;
     for (Shippers shipper : ListShippersData)
     {
-        cout << shipper.ToString() << endl;
+        cout.width(3);
+        cout << shipper.ShipperID << left;
+        cout.width(40);
+        cout << shipper.ShipperName << left;
+        cout.width(40);
+        cout << shipper.Phone << left << endl;
     }
 }
 

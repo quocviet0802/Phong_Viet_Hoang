@@ -110,8 +110,36 @@ int CustomersData::ExportToFile(string filename){
 void CustomersData::printList()
 {
     cout << " ------------------------- Customer table ----------------------------" << endl;
-    for (Customers p:_data){
-        cout << p.ToString() << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(30);
+    cout << "CustomerName" << left;
+    cout.width(30);
+    cout << "ContactName" << left;
+    cout.width(40);
+    cout << "Address" << left;
+    cout.width(30);
+    cout << "City" << left;
+    cout.width(10);
+    cout << "PostalCode"<< left;
+    cout.width(20);
+    cout << "Country" << left << endl;
+    for (Customers p : _data)
+    {
+        cout.width(3);
+        cout << p.CustomerId << left;
+        cout.width(30);
+        cout << p.CustomerName << left;
+        cout.width(30);
+        cout << p.ContactName << left;
+        cout.width(40);
+        cout << p.Address << left;
+        cout.width(30);
+        cout << p.City << left;
+        cout.width(10);
+        cout << p.PostalCode << left;
+        cout.width(20);
+        cout << p.Country << left << endl;
     }
 }
 

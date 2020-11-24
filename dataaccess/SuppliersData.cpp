@@ -340,9 +340,32 @@ bool SuppliersData::deleteSupplierByID(int supplierID)
 void SuppliersData::printList()
 {
     cout << " ------------------------- Supplier table ----------------------------" << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(40);
+    cout << "SupplierName" << left;
+    cout.width(30);
+    cout << "ContactName" << left;
+    cout.width(35);
+    cout << "Address" << left;
+    cout.width(15);
+    cout << "City" << left;
+    cout.width(11);
+    cout << "PostalCode" << left;
+    cout.width(15);
+    cout << "Country" << left;
+    cout.width(15);
+    cout << "Phone" << left << endl;
     for (Suppliers supplier : ListSuppliersData)
     {
-        cout << supplier.ToString() << endl;
+        cout << setw(3) << supplier.SupplierID
+             << setw(40) << supplier.SupplierName
+             << setw(30) << supplier.ContactName
+             << setw(35) << supplier.Address
+             << setw(15) << supplier.City
+             << setw(11) << supplier.PostalCode
+             << setw(15) << supplier.Country
+             << setw(15) << supplier.Phone << left << endl;
     }
 }
 

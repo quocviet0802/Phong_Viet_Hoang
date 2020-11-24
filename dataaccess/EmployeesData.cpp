@@ -115,7 +115,31 @@ vector<Employees> EmployeesData::getEmployeesDataList(){
 void EmployeesData::printList()
 {
     cout << " ------------------------- Employees table ----------------------------" << endl;
-    for (Employees p:_data){
-        cout << p.ToString() << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(15);
+    cout << "LastName" << left;
+    cout.width(15);
+    cout << "FirstName" << left;
+    cout.width(15);
+    cout << "BirthDate" << left;
+    cout.width(10);
+    cout << "Photo" << left;
+    cout.width(1000);
+    cout << "Notes" << left << endl;
+    for (Employees p : _data)
+    {
+        cout.width(3);
+        cout << p.EmployeeId << left;
+        cout.width(15);
+        cout << p.FirstName << left;
+        cout.width(15);
+        cout << p.LastName << left;
+        cout.width(15);
+        cout << p.BirthDate << left;
+        cout.width(10);
+        cout << p.Photo << left;
+        cout.width(1000);
+        cout << p.Notes << left << endl;
     }
 }

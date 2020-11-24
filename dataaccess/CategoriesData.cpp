@@ -184,7 +184,19 @@ bool CategoriesData::deleteCategoryByID(int CategoryID)
 void CategoriesData::printList()
 {
     cout << " ------------------------- Category table ----------------------------" << endl;
-    for (Categories p:_data){
-        cout << p.ToString() << endl;
+    cout.width(3);
+    cout << "ID" << left;
+    cout.width(30);
+    cout << "CategoryName" << left;
+    cout.width(50);
+    cout << "Description" << left << endl;
+    for (Categories p : _data)
+    {
+        cout.width(3);
+        cout << p.CategoryId << left;
+        cout.width(30);
+        cout << p.CategoryName << left;
+        cout.width(50);
+        cout << p.Description << left << endl;
     }
 }
