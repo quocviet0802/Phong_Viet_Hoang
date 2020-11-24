@@ -33,6 +33,12 @@ ShippersData::ShippersData(string filename){
     inFile.close();
 }
 
+
+/** @brief Function add a Products object to the end of the list inside ProductsData.
+ *  
+ *  Function add a Products object to the end of the list inside ProductsData.
+ *  @return maxId of Products object inside ProductsData;
+ */
 int ShippersData::PushBack(Shippers p){
     //at first, there nothing, maxId = 0
     
@@ -45,6 +51,12 @@ int ShippersData::PushBack(Shippers p){
 }
 
 
+/** @brief Function updates a Products object at a position inside the list inside ProductsData.
+ *  
+ *  Function updates a Products object at a position inside the list inside ProductsData.
+ *  @return maxId of Products object inside ProductsData;
+ *  if fail, return -1;
+ */
 int ShippersData::Update(int i, Shippers p){
     if (i < 0) return -1;
     if (i >= ListShippersData.size()) return -1;
@@ -55,10 +67,15 @@ int ShippersData::Update(int i, Shippers p){
 }
 
 
+/** @brief Function return a Products object at a position inside the list inside ProductsData.
+ *  
+ *  Function return a Products object at a position inside the list inside ProductsData.
+ *  @return Products object;
+ *  if fail, return NULL;
+ */
 Shippers ShippersData::Get(int i){
     return ListShippersData[i];
 }
-
 
 Shippers* ShippersData::GetPointer(int i){
     Shippers* p = nullptr;
@@ -70,11 +87,21 @@ Shippers* ShippersData::GetPointer(int i){
 }
 
 
+/** @brief Function return size of ProductsData.
+ *  
+ *  Function return size of ProductsData. This is the quantity of Products objects inside ProductsData.
+ *  @return number of Products objects;
+ */
 int ShippersData::GetSize(){
     return ListShippersData.size();
 }
 
 
+/** @brief Function write all data in ProductsData to file.
+ *  
+ *  Function write all data in ProductsData to file.
+ *  @return 1 if success, 0 if fail;
+ */
 int ShippersData::ExportToFile(string filename){
     ofstream outFile(filename, ios::out);
     if (!outFile) return 0;
@@ -85,15 +112,13 @@ int ShippersData::ExportToFile(string filename){
     return 1;
 }
 
+/** @brief Function get Shippers object with id
+ *  
+ *  Function get Shippers object with id
+ *  @return address of a Shippers 
+ */
 Shippers* ShippersData::GetShipperByID(int id){
     Shippers* p = nullptr;
-
-    // for(Shippers item: ListShippersData){
-    //     if(id == item.ShipperID){
-    //         p = &ListShippersData[item.ShipperID - 1];
-    //         break;
-    //     }
-    // }
 
     for(int i = 0; i < ListShippersData.size(); i++){
         if(id == ListShippersData[i].ShipperID){
@@ -104,15 +129,13 @@ Shippers* ShippersData::GetShipperByID(int id){
     return p;
 }
 
+/** @brief Function get Shippers object with name
+ *  
+ *  Function get Shippers object with name
+ *  @return address of a Shippers 
+ */
 Shippers* ShippersData::GetShipperByName(string name){
     Shippers* p = nullptr;
-
-    // for(Shippers item: ListShippersData){
-    //     if(name == item.ShipperName){
-    //         p = &ListShippersData[item.ShipperID - 1];
-    //         break;
-    //     }
-    // }
 
     for(int i = 0; i < ListShippersData.size(); i++){
         if(name == ListShippersData[i].ShipperName){
@@ -124,7 +147,11 @@ Shippers* ShippersData::GetShipperByName(string name){
     return p;
 }
 
-
+/** @brief return a List data of Shippers 
+ *  A function return a vector of Shippers object
+ *  @return vector include suppliers
+ *  @author VietMQ
+ */
 vector<Shippers> ShippersData::getShippersDataList(){
     return ListShippersData;
 }
