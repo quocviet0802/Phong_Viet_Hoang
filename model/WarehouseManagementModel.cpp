@@ -250,16 +250,13 @@ bool WarehouseManagementModel::CheckInTime(string time_start, string time_end, s
 
     int check_rank = TimeCompare(start, end);
 
+    int compare_start = TimeCompare(check, start);
+    int compare_end = TimeCompare(end, check);
+
+
     if(check_rank < 0){
-        int compare_start = TimeCompare(check, start);
-        int compare_end = TimeCompare(end, check);
-
         return (compare_start >= 0 && compare_end >= 0) ? true : false;
-
     }else{
-        int compare_start = TimeCompare(check, start);
-        int compare_end = TimeCompare(end, check);
-
         return (compare_start <= 0 && compare_end <= 0) ? true :  false;
     }
 }

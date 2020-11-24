@@ -47,7 +47,7 @@ public:
 
     virtual bool ShowStatisticsFollowProductID(int) = 0;
     virtual bool ShowStatisticsFollowCategoryID(int) = 0;
-    virtual bool ShowStatisticsFollowSupplierID(int) = 0;
+    virtual bool ShowStatisticsFollowCustomerID(int) = 0;
     void ShowDataOfStatistics(int, int, int);
 
     tm string2time(string);
