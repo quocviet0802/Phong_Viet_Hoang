@@ -71,6 +71,37 @@ string WarehouseManagementModel::GetCategoryNameByID(int id){
 }
 
 
+/** @brief Get product name with id
+ *  A function to get product name with category id
+ *  @return string of product name
+ *  @author VietmQ
+ */
+string WarehouseManagementModel::GetProductNameByID(int id){
+    string product_name = "NULL";
+    for(Product item: DataProducts){
+        if(id == item.ProductID){
+            product_name = item.ProductName;
+        }
+    }
+    return product_name;
+}
+
+
+/** @brief Get price  with id
+ *  A function to get price with category id
+ *  @return price of product
+ *  @author VietmQ
+ */
+double WarehouseManagementModel::GetProductPriceByID(int id){
+    double price = 0;
+    for(Product item: DataProducts){
+        if(id == item.ProductID){
+            price = item.Price;
+        }
+    }
+    return price;
+}
+
 /** @brief Get customer name with id
  *  A function to get customer name with customer id
  *  @return string of customer name
@@ -108,14 +139,14 @@ string WarehouseManagementModel::GetShipperNameByID(int id){
  *  @return string of supplier name
  *  @author VietmQ
  */
-string WarehouseManagementModel::GetSupplierNameByID(int id){
-    string supplier_name = "NULL";
-    for(Suppliers item: DataSuppliers){
-        if(id == item.SupplierID){
-            supplier_name = item.SupplierName;
+string WarehouseManagementModel::GetEmployeeNameByID(int id){
+    string employee_name = "NULL";
+    for(Employees item: DataEmployees){
+        if(id == item.EmployeeId){
+            employee_name = item.FirstName + item.LastName;
         }
     }
-    return supplier_name;
+    return employee_name;
 }
 
 
@@ -140,6 +171,9 @@ string WarehouseManagementModel::GetOrderDateByID(int id){
  *  @author VietmQ
  */
 void WarehouseManagementModel::ShowTable(){
+    system("CLS");
+    cout << "Statistics From " << TimeStart <<" To " << TimeEnd << endl;
+
     cout << endl << endl;
     cout << setw(10) << left << "Order_ID";
     cout << setw(15) << left << "Product_ID";

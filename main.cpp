@@ -25,6 +25,10 @@
 #include "model/ImportManagementModel.h"
 #include "model/ExportManagementModel.h"
 #include "model/CategoryManegementModel.h"
+#include "model/InventoryManagement.h"
+
+#include "model/DataManagement.h"
+
 
 #include "libs/json.hpp"
 
@@ -39,11 +43,12 @@ int main(int argc, char** argv) {
 	do
 	{	
 		system("CLS");
+		cout << "Please choose :  " << endl;
 		cout << "1. Import Management" << endl;
 		cout << "2. Export Management" << endl; 
-		cout << "3. Inventory Manager" << endl;
-		cout << "4. Category Manegement" << endl; 
-		cout << "5. Management of Data Systems" << endl;
+		cout << "3. Inventory Management" << endl;
+		cout << "4. Category Management" << endl; 
+		cout << "5. Management of Data System" << endl;
 		cout << "6. Exit" << endl << endl;
         cout << "Select : ";
 
@@ -54,20 +59,19 @@ int main(int argc, char** argv) {
         case 1:
         {
             ImportManagementModel importModel;
-			importModel.GetDataOrder();
 			importModel.ImportManagement();
 			break;
         }
         case 2:
         {
             ExportManagementModel exportModel;
-			exportModel.GetDataOrder();
 			exportModel.ExportManagement();
 			break;
         }
         case 3:
         {
-			cout << "Ahaha";
+			InventoryManagement inventory;
+			inventory.MenuInventoryManagemament();
 			break;
         }
         case 4:
@@ -77,7 +81,7 @@ int main(int argc, char** argv) {
         }
 		case 5:
         {
-			cout << "Ahuhu";
+			DataManagement save_data;
 			break;
         }
 		case 6:
@@ -89,6 +93,7 @@ int main(int argc, char** argv) {
         }
 
 	} while (1);
+
 
 	
 	

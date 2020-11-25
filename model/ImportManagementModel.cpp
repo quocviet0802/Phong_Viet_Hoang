@@ -108,9 +108,12 @@ bool ImportManagementModel::ShowStatisticsFollowCustomerID(int id){
  *  @author VietmQ
  */
 void ImportManagementModel::ImportManagement(){
+    GetDataOrder();
     do
     {
         system("CLS");
+        cout << "---Import Management---" << endl << endl;
+        cout << "Please choose :  " << endl << endl; 
         cout << "1. Input New Data"<<endl;
         cout << "2. Export Statistics"<<endl;
         cout << "3. Exit" <<endl;
@@ -122,6 +125,7 @@ void ImportManagementModel::ImportManagement(){
         case 1:
         {
             InputDataToDB();
+            cout << endl << "Done !!" << endl;
             getch();
             return;
         }
@@ -158,7 +162,7 @@ void ImportManagementModel::ExportReport(){
         system("CLS");
         cout << "1. Export Statistics With Product ID"<< endl;
         cout << "2. Export Statistics With Category ID"<< endl;
-        cout << "3. Export Statistics With Supplier ID"<< endl;
+        cout << "3. Export Statistics With Customer ID"<< endl;
         cout << "4. Exit"<< endl;
         cout << "Select: "<< endl;
   
@@ -212,6 +216,7 @@ void ImportManagementModel::InputDataToDB(){
     system("CLS");
     cout << "Input Order Information" << endl;
 
+    
     cout << "Input Customer ID ('intput ID is 0 if New Customer): ";
     int customer_id;
     cin >> customer_id;
@@ -267,6 +272,7 @@ void ImportManagementModel::InputDataToDB(){
         fflush(stdin);
         getline(cin, country);
 
+        cout << endl;
         cout << "Enter to save 'Customer Information': ";
         getch();
 
@@ -274,10 +280,13 @@ void ImportManagementModel::InputDataToDB(){
         customer_id = customer.createCustomers(name, contact, address, city, portal_code, country);
         customer.ExportToFile("RawDatas/Customers.txt");
 
+        GetDataOrder();
         cout << " Done !" << endl;
         getch();
     }
+    
 
+    cout << endl;
     cout << "Enter to save 'Order Information': ";
     getch();
 
@@ -286,7 +295,23 @@ void ImportManagementModel::InputDataToDB(){
     int order_id = oders.createOrder(customer_id, employee_id, order_date, shipper_id);
     oders.exportDataToFile();
 
-    cout << " Done !" << endl;
+    cout << endl << endl;
+
+    cout << setw(10) << left << "Order_ID";
+    cout << setw(25) << left << "Customer_Name";
+    cout << setw(25) << left << "Employee_Name";
+    cout << setw(25) << left << "Order_Date";
+    cout << setw(25) << left << "Shiper_name"<< endl;
+    cout << setfill('-');
+    cout << setw(100) << "-" << endl;
+    cout << setfill(' ');
+
+    cout << setw(10) << left << order_id;
+    cout << setw(25) << left << GetCustomerNameByID(customer_id);
+    cout << setw(25) << left << GetEmployeeNameByID(employee_id);
+    cout << setw(25) << left << order_date;
+    cout << setw(25) << left << GetShipperNameByID(shipper_id) << endl <<endl;
+
     getch();
 
     char check;
@@ -294,39 +319,36 @@ void ImportManagementModel::InputDataToDB(){
 
         system("CLS");
         cout << endl;
-        cout << "Input Product Information of Order" << endl;
+        cout << "Input Product Information of Order ( " << order_id << " )" << endl;
 
         int product_id;
         cout << "Input Product ID : ";
         cin >> product_id;
-        if(product_id == 0){
-            cout << "Input 'City' of new customer: ";
-            string city;
-            cin.clear();
-            fflush(stdin);
-            getline(cin, city);
 
-            cout << "Input 'Postal Code' of new customer: ";
-            string portal_code;
-            cin.clear();
-            fflush(stdin);
-            getline(cin, portal_code);
-
-            cout << "Input 'Country' of new customer: ";
-            string country;
-            cin.clear();
-            fflush(stdin);
-            getline(cin, country);
-        }
-
-        cout << "Input Quanlity: ";
-        int quanlity;
-        cin >> quanlity;
+        cout << "Input Quantity: ";
+        int quantity;
+        cin >> quantity;
 
         OrderDetailsData odersdetails;
         odersdetails.importDataFromJsonFile();
-        odersdetails.createOrderDetail(order_id, product_id, quanlity);
+        odersdetails.createOrderDetail(order_id, product_id, quantity);
         odersdetails.exportDataToFile();
+
+        cout << endl << endl;
+
+        cout << setw(30) << left << "Product_Name";
+        cout << setw(25) << left << "Quanltity";
+        cout << setw(25) << left << "Price" ;
+        cout << setw(25) << left << "Cost" << endl;
+        cout << setfill('-');
+        cout << setw(105) << "-" << endl;
+        cout << setfill(' ');
+        
+        double price = GetProductPriceByID(product_id);
+        cout << setw(30) << left << GetProductNameByID(product_id);
+        cout << setw(25) << left << quantity;
+        cout << setw(25) << left << price;
+        cout << setw(25) << left << price * quantity << endl << endl;
 
         cout << "Continue [Y/N]:";
         cin >> check;
