@@ -162,7 +162,7 @@ void ImportManagementModel::ExportReport(){
         system("CLS");
         cout << "1. Export Statistics With Product ID"<< endl;
         cout << "2. Export Statistics With Category ID"<< endl;
-        cout << "3. Export Statistics With Supplier ID"<< endl;
+        cout << "3. Export Statistics With Customer ID"<< endl;
         cout << "4. Exit"<< endl;
         cout << "Select: "<< endl;
   
