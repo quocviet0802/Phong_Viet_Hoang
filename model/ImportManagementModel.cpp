@@ -112,6 +112,8 @@ void ImportManagementModel::ImportManagement(){
     do
     {
         system("CLS");
+        cout << "---Import Management---" << endl << endl;
+        cout << "Please choose :  " << endl << endl; 
         cout << "1. Input New Data"<<endl;
         cout << "2. Export Statistics"<<endl;
         cout << "3. Exit" <<endl;
@@ -213,6 +215,7 @@ void ImportManagementModel::InputDataToDB(){
     system("CLS");
     cout << "Input Order Information" << endl;
 
+    
     cout << "Input Customer ID ('intput ID is 0 if New Customer): ";
     int customer_id;
     cin >> customer_id;
@@ -295,30 +298,11 @@ void ImportManagementModel::InputDataToDB(){
 
         system("CLS");
         cout << endl;
-        cout << "Input Product Information of Order" << endl;
+        cout << "Input Product Information of Order ( " << order_id << " )" << endl;
 
         int product_id;
         cout << "Input Product ID : ";
         cin >> product_id;
-        if(product_id == 0){
-            cout << "Input 'City' of new customer: ";
-            string city;
-            cin.clear();
-            fflush(stdin);
-            getline(cin, city);
-
-            cout << "Input 'Postal Code' of new customer: ";
-            string portal_code;
-            cin.clear();
-            fflush(stdin);
-            getline(cin, portal_code);
-
-            cout << "Input 'Country' of new customer: ";
-            string country;
-            cin.clear();
-            fflush(stdin);
-            getline(cin, country);
-        }
 
         cout << "Input Quanlity: ";
         int quanlity;

@@ -140,6 +140,9 @@ string WarehouseManagementModel::GetOrderDateByID(int id){
  *  @author VietmQ
  */
 void WarehouseManagementModel::ShowTable(){
+    system("CLS");
+    cout << "Statistics From " << TimeStart <<" To " << TimeEnd << endl;
+
     cout << endl << endl;
     cout << setw(10) << left << "Order_ID";
     cout << setw(15) << left << "Product_ID";
