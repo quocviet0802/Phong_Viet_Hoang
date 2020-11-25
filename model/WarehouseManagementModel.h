@@ -36,9 +36,11 @@ public:
     void GetDataOrder();
 
     string GetShipperNameByID(int);
-    string GetSupplierNameByID(int);
+    string GetEmployeeNameByID(int);
     string GetCustomerNameByID(int);
     string GetCategoryNameByID(int);
+    string GetProductNameByID(int);
+    double GetProductPriceByID(int);
 
     string GetOrderDateByID(int);
 

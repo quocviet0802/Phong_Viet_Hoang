@@ -3,7 +3,7 @@
 
 DataManagement::DataManagement(){
     Run();
-    cout << "Restore Success !!"<<endl;
+    cout << "Data saved successfully! "<<endl;
     getch();
 
 }

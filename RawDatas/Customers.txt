@@ -89,4 +89,3 @@
 {"Address":"305 - 14th Ave. S. Suite 3B","City":"Seattle","ContactName":"Karl Jablonski","Country":"USA","CustomerId":89,"CustomerName":"White Clover Markets","PostalCode":"98128"}
 {"Address":"Keskuskatu 45","City":"Helsinki","ContactName":"Matti Karttunen","Country":"Finland","CustomerId":90,"CustomerName":"Wilman Kala","PostalCode":"21240"}
 {"Address":"ul. Filtrowa 68","City":"Walla","ContactName":"Zbyszek","Country":"Polan","CustomerId":91,"CustomerName":"Wolski","PostalCode":"01-012"}
-{"Address":"Au Co","City":"Da Nang","ContactName":"Maria Ozawa","Country":"Viet Nam","CustomerId":92,"CustomerName":"Mac Quoc Viet","PostalCode":"1234"}

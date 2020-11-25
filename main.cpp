@@ -46,9 +46,9 @@ int main(int argc, char** argv) {
 		cout << "Please choose :  " << endl;
 		cout << "1. Import Management" << endl;
 		cout << "2. Export Management" << endl; 
-		cout << "3. Inventory Manager" << endl;
-		cout << "4. Category Manegement" << endl; 
-		cout << "5. Management of Data Systems" << endl;
+		cout << "3. Inventory Management" << endl;
+		cout << "4. Category Management" << endl; 
+		cout << "5. Management of Data System" << endl;
 		cout << "6. Exit" << endl << endl;
         cout << "Select : ";
 

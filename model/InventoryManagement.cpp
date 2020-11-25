@@ -217,8 +217,8 @@ void InventoryManagement::MenuInventoryManagemament(){
     system("CLS");
     cout<< "=====================    Menu Inventory Managemament   =================="<<endl;
     cout<< "========================================================================="<<endl<<endl;
-    cout<< "1. Import and export of products report in the period. "<<endl;
-    cout<< "2. Inventory reports and inventory value."<<endl;
+    cout<< "1. Import and export of products report in the period time. "<<endl;
+    cout<< "2. Inventory reports and inventory value in the period time."<<endl;
     cout<< "3. Exit "<<endl;
     cout<< "Input Menu: "<<endl;
     int x;
@@ -250,7 +250,7 @@ void InventoryManagement::MenuInventoryManagemament(){
             case 2:
             {   
                 
-                cout<<"2. Inventory reports and inventory value:"<<endl;
+                cout<<"2. Inventory reports and inventory value in the period time:"<<endl;
                 cout<< "Input the period time: "<<endl;
                 string startDate;
                 string endDate;
