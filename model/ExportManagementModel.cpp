@@ -9,7 +9,7 @@
 using namespace std;
 
 ExportManagementModel::ExportManagementModel(){
-
+    
 }
 
 ExportManagementModel::~ExportManagementModel(){
@@ -108,6 +108,7 @@ bool ExportManagementModel::ShowStatisticsFollowCustomerID(int id){
  *  @author VietmQ
  */
 void ExportManagementModel::ExportManagement(){
+    GetDataOrder();
     do
     {
         system("CLS");

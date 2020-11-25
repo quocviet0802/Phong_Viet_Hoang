@@ -108,6 +108,7 @@ bool ImportManagementModel::ShowStatisticsFollowCustomerID(int id){
  *  @author VietmQ
  */
 void ImportManagementModel::ImportManagement(){
+    GetDataOrder();
     do
     {
         system("CLS");
